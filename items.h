@@ -23,16 +23,18 @@ private:
 };
 
 
-class Backpack : public Item {
+class Backpack : Item {
 public:
-    Backpack() {};
-    Backpack(int vol, int max_wght) {
-        volume = vol;
-        max_weight = max_wght;
-    }
+    Backpack() {
+        weight = 0
+    };
+    int value = 10;
+    int max_weight = 50;
+
 private:
-    int volume,
-        max_weight;
+    vector <Weapon> weapones;
+    vector <Item> items;
+    vector <Armor> armors;
 };
 
 
@@ -44,6 +46,8 @@ private:
         damage_boost;
 
 };
+
+
 
 #endif
 

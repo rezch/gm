@@ -1,2 +1,2 @@
 ﻿  main.cpp
-  main.vcxproj -> C:\Users\Daniil\source\repos\gm\x64\Debug\main.exe
+C:\Users\Daniil\source\repos\gm\main\progress_save.h(5,9): fatal error C1083: Не удается открыть файл включение: json/writer.h: No such file or directory,
