@@ -17,10 +17,8 @@ public:
         skill_points = points;
         backpack = Backpack();
 
-        int i = 0;
-        for (auto& skill : skill_names) {
-            skills[skill] = skills_list[i];
-            i++;
+        for (int i = 0; i < 5; i++) {
+            skills[skill_names[i]] = skills_list[i];
         }
     };
 
@@ -28,17 +26,46 @@ public:
     bool in_battle = false;
     Backpack backpack;
 
-    // hp constructor
+    // hp
     int get_hp() {
         return hp;
     };
+
     void take_damage(int damage) {
         hp -= damage;
     };
 
     // skills constructor
+    const string skill_names[SKILLS_COUNT] = { "power", // сила
+        "agility", // ловкость
+        "intelligence", // интелект
+        "hack", // взлом
+        "healing" // восстановление
+    };
+
     void upgrade_skill_power(int skill_id) {
         skill_points--;
+    }
+
+    int get_skillpoints() {
+        return skill_points;
+    }
+
+    map <string, int> get_skills() {
+        return skills;
+    }
+
+    // Items 
+    Weapon get_weapon() {
+        return weapon;
+    }
+
+    vector <Armor> get_armor() {
+        return vector <Armor> {helmet, 
+            chestplate, 
+            leggings, 
+            boots
+        };
     }
 
 private:
@@ -54,12 +81,6 @@ private:
         boots;
     
     // Skills
-    string skill_names[SKILLS_COUNT] = { "power", // сила
-        "agility", // ловкость
-        "intelligence", // интелект
-        "hack", // взлом
-        "healing" // восстановление
-    };
     map <string, int> skills;
 };
 

@@ -1,16 +1,26 @@
 {
-  "Player": {
-    "hp": 100,
-    "skills": [ 1, 2, 3, 4, 5 ],
-    "skill_points": 0,
-    "Items": {
-      "weapon": 0,
-      "Armor": {
-        "head": 0,
-        "chest": 0,
-        "legs": 0,
-        "boots": 0
-      }
-    }
-  }
+	"Player" : 
+	{
+		"Items" : 
+		{
+			"Armor" : 
+			{
+				"boots_id" : 0,
+				"chest_id" : 0,
+				"head_id" : 0,
+				"legs_id" : 0
+			},
+			"weapone_id" : 0
+		},
+		"hp" : 100,
+		"skill_points" : 5,
+		"skills" : 
+		[
+			2,
+			1,
+			0,
+			0,
+			2
+		]
+	}
 }

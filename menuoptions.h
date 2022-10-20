@@ -22,19 +22,19 @@ void skill_points_menu(int(&skills)[5], int points) {
 			points--;
 			break;
 		case 50:
-			skills[0]++;
+			skills[1]++;
 			points--;
 			break;
 		case 51:
-			skills[0]++;
+			skills[2]++;
 			points--;
 			break;
 		case 52:
-			skills[0]++;
+			skills[3]++;
 			points--;
 			break;
 		case 53:
-			skills[0]++;
+			skills[4]++;
 			points--;
 			break;
 		}

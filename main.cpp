@@ -12,7 +12,7 @@ using namespace std;
 Player make_new_player() {
     int skills[5] = { 0, 0, 0, 0, 0 };
     int points = 5;
-    //skill_points_menu(skills, points);
+    skill_points_menu(skills, points);
     Player player = Player(100, points, skills);
     
     return player;

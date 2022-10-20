@@ -1,10 +1,14 @@
 #ifndef ITEMS_H
 #define ITEMS_H
-
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
 
 class Object {
 public:
-    std::string name;
+    int id;
+    string name;
 };
 
 
@@ -19,22 +23,7 @@ class Weapon : public Item {
 private:
     float damage;
     int cost;
-    std::string description;
-};
-
-
-class Backpack : Item {
-public:
-    Backpack() {
-        weight = 0
-    };
-    int value = 10;
-    int max_weight = 50;
-
-private:
-    vector <Weapon> weapones;
-    vector <Item> items;
-    vector <Armor> armors;
+    string description;
 };
 
 
@@ -47,6 +36,20 @@ private:
 
 };
 
+
+class Backpack : Item {
+public:
+    Backpack() {
+        weight = 0;
+    };
+    int value = 10;
+    int max_weight = 50;
+
+private:
+    vector <Weapon> weapones();
+    vector <Item> items();
+    vector <Armor> armors();
+};
 
 
 #endif
