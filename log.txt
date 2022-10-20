@@ -1,16 +1,4 @@
-{
-  "Player": {
-    "hp": 100,
-    "skills": [ 1, 2, 3, 4, 5 ],
-    "skill_points": 0,
-    "Items": {
-      "weapon": 0,
-      "Armor": {
-        "head": 0,
-        "chest": 0,
-        "legs": 0,
-        "boots": 0
-      }
-    }
-  }
-}
+TODO:
+I - inventory
+M - map
+S - skills menu - OK

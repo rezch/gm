@@ -9,16 +9,24 @@ using namespace std;
 
 const int SKILLS_COUNT = 5;
 
+const string skill_names[SKILLS_COUNT] = { "power", // сила
+        "agility", // ловкость
+        "intelligence", // интелект
+        "hack", // взлом
+        "healing" // восстановление
+};
+
+
 class Player {
 public:
     Player() {};
-    Player(int full_hp, int points, int* skills_list) {
+    Player(int full_hp, int points) {
         hp = full_hp;
         skill_points = points;
         backpack = Backpack();
 
-        for (int i = 0; i < 5; i++) {
-            skills[skill_names[i]] = skills_list[i];
+        for (int i = 0; i < SKILLS_COUNT; i++) {
+            skills[skill_names[i]] = 0;
         }
     };
 
@@ -36,19 +44,28 @@ public:
     };
 
     // skills constructor
-    const string skill_names[SKILLS_COUNT] = { "power", // сила
-        "agility", // ловкость
-        "intelligence", // интелект
-        "hack", // взлом
-        "healing" // восстановление
-    };
+    void skills_to_list(int (&skills_list)[SKILLS_COUNT]) {
+        int i = 0;
+        for (auto& skill_name : skill_names) {
+            skills_list[i] = skills[skill_name];
+            i++;
+        }
+    }
 
-    void upgrade_skill_power(int skill_id) {
-        skill_points--;
+    void list_to_skills(int(&skills_list)[SKILLS_COUNT]) {
+        for (int i = 0; i < SKILLS_COUNT; i++) {
+            skills[skill_names[i]] = skills_list[i];
+        }
     }
 
     int get_skillpoints() {
         return skill_points;
+    }
+
+    void set_skillpoints(int points) {
+        if (points > 0) {
+            skill_points = points;
+        }
     }
 
     map <string, int> get_skills() {

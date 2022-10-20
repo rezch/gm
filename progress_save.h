@@ -15,6 +15,11 @@ const string armor_names[4] = {
 };
 
 
+void load() {
+
+}
+
+
 bool save(Player& player) {
 	if (player.in_battle) {
 		return 0;
@@ -27,7 +32,7 @@ bool save(Player& player) {
 	
 	Json::Value skills_json(Json::arrayValue);
 	map <string, int> skills = player.get_skills();
-	for (auto& name : player.skill_names) {
+	for (auto& name : skill_names) {
 		skills_json.append(skills[name]);
 	}
 
