@@ -1,0 +1,26 @@
+{
+	"Player" : 
+	{
+		"Items" : 
+		{
+			"Armor" : 
+			{
+				"boots_id" : 0,
+				"chest_id" : 0,
+				"head_id" : 0,
+				"legs_id" : 0
+			},
+			"weapone_id" : 0
+		},
+		"hp" : 100,
+		"skill_points" : 5,
+		"skills" : 
+		[
+			2,
+			1,
+			0,
+			0,
+			2
+		]
+	}
+}
