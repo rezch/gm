@@ -23,16 +23,50 @@ public:
     Player(int full_hp, int points) {
         hp = full_hp;
         skill_points = points;
-        backpack = Backpack();
 
         for (int i = 0; i < SKILLS_COUNT; i++) {
             skills[skill_names[i]] = 0;
         }
     };
+    Player(int full_hp, int points, int (&skill_list)[5]) {
+        hp = full_hp;
+        skill_points = points;
+
+        for (int i = 0; i < SKILLS_COUNT; i++) {
+            skills[skill_names[i]] = skill_list[i];
+        }
+    };
 
     // public varibales
     bool in_battle = false;
-    Backpack backpack;
+
+    // xp
+    int get_xp() {
+        return xp;
+    }
+
+    void add_xp(int xp_points) {
+        if (xp_points > 0) {
+            xp += xp_points;
+        }
+    }
+
+    //money
+    int get_money() {
+        return money;
+    }
+    
+    void add_money(int sum) {
+        if (sum > 0) {
+            money += sum;
+        }
+    }
+
+    void spend_money(int sum) {
+        if (sum > 0) {
+            money -= sum;
+        }
+    }
 
     // hp
     int get_hp() {
@@ -40,7 +74,9 @@ public:
     };
 
     void take_damage(int damage) {
-        hp -= damage;
+        if (damage > 0) {
+            hp -= damage;
+        }
     };
 
     // skills constructor
@@ -77,6 +113,10 @@ public:
         return weapon;
     }
 
+    void set_weapon(int weapone_id) {
+
+    }
+
     vector <Armor> get_armor() {
         return vector <Armor> {helmet, 
             chestplate, 
@@ -85,10 +125,28 @@ public:
         };
     }
 
+    void set_helmet(int helmet_id) {
+
+    }
+
+    void set_chestplate(int chestplate_id) {
+
+    }
+
+    void set_leggings(int leggings_id) {
+
+    }
+
+    void set_boots(int weapon_id) {
+
+    }
+
 private:
     // specifications
-    int hp;
-    int skill_points;
+    int hp,
+        skill_points,
+        xp,
+        money;
 
     // Items
     Weapon weapon;
@@ -104,12 +162,13 @@ private:
 
 class Enemy {
 public:
-    std::string name;
-    std::string description;
+    string name;
+    string description;
 private:
     int hp,
         damage,
-        regeneration;
+        regeneration,
+        xp;
     float resistance;
 };
 

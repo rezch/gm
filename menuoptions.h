@@ -8,7 +8,17 @@
 #include <vector>
 #include "items.h"
 #include "CREATURES.H"
+#include "progress_save.h"
+#include "items_list.h"
 using namespace std;
+
+
+const map <string, int> rarity = {
+	{"default", 0},
+	{"rare", 1},
+	{"epic", 2},
+	{"legend", 3},
+};
 
 
 void cls() {
@@ -16,7 +26,28 @@ void cls() {
 }
 
 void inventory_menu(Player& player) {
+	if (player.in_battle) {
+		return;
+	}
+	bool menu_is_on = true;
+	while (menu_is_on) {
+		cls();
+		cout << "XP: " << player.get_xp() << " MONEY: " <<
+			player.get_money() << endl;
 
+		Weapon weapon = player.get_weapon();
+		cout << "Оружие: \n";
+		cout << weapon.name << endl << weapon.rare << endl << weapon.description;
+		weapon.cost;
+		int input = _getch();
+		switch (input) {
+		case 113: // Q
+			save(player);
+			menu_is_on = false;
+			break;
+		}
+		cls();
+	}
 }
 
 
@@ -27,27 +58,27 @@ int skill_points_menu(int(&skills)[5], int points) {
 			"сила - 1\nловкость - 2\nинтелект - 3\nвзлом - 4\nвосстановление - 5\nвыйти - q\n";
 		int choose = _getch();
 		switch (choose) {
-		case 49:
+		case 49: // 1
 			skills[0]++;
 			points--;
 			break;
-		case 50:
+		case 50: // 2
 			skills[1]++;
 			points--;
 			break;
-		case 51:
+		case 51: // 3
 			skills[2]++;
 			points--;
 			break;
-		case 52:
+		case 52: // 4
 			skills[3]++;
 			points--;
 			break;
-		case 53:
+		case 53: // 5
 			skills[4]++;
 			points--;
 			break;
-		case 113:
+		case 113: // Q
 			menu_is_on = false;
 			break;
 		}

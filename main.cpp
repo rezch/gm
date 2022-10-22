@@ -10,8 +10,12 @@ using namespace std;
 
 
 Player make_new_player() {
-    Player player = Player(100, 5);
-    upgrade_skills(player);
+    if (log_is_empty("log.json")) {
+        Player player = Player(100, 5);
+        upgrade_skills(player);
+        return player;
+    }
+    Player player = load();
     return player;
 }
 

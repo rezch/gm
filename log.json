@@ -13,14 +13,16 @@
 			"weapone_id" : 0
 		},
 		"hp" : 100,
+		"money" : 12,
 		"skill_points" : 2,
 		"skills" : 
 		[
 			2,
+			0,
+			0,
 			1,
-			0,
-			0,
 			0
-		]
+		],
+		"xp" : 0
 	}
 }

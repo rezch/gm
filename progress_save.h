@@ -15,8 +15,31 @@ const string armor_names[4] = {
 };
 
 
-void load() {
+bool log_is_empty(string file_name) {
+	ifstream file(file_name, ios::in);
+	return file.peek() == ifstream::traits_type::eof();
+}
 
+
+Player load() {
+	ifstream log_file("log.json", std::ifstream::binary);
+	Json::Value root;
+	log_file >> root;
+
+	int skill_list[SKILLS_COUNT];
+	for (int i = 0; i < SKILLS_COUNT; i++) {
+		skill_list[i] = root["Player"]["skills"][i].asInt();
+	}
+
+	Player player = Player(
+		root["Player"]["hp"].asInt(),
+		root["Player"]["skill_points"].asInt(),
+		skill_list
+		);
+	player.add_xp(root["Player"]["xp"].asInt());
+	player.add_money(root["Player"]["money"].asInt());
+
+	return player;
 }
 
 
@@ -29,6 +52,8 @@ bool save(Player& player) {
 	Json::Value root;
 	
 	root["Player"]["hp"] = player.get_hp();
+	root["Player"]["xp"] = player.get_xp();
+	root["Player"]["money"] = player.get_money();
 	
 	Json::Value skills_json(Json::arrayValue);
 	map <string, int> skills = player.get_skills();

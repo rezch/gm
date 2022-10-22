@@ -13,6 +13,8 @@ public:
 
 
 class Item : public Object {
+public:
+    string rare;
 protected:
     int cost,
         weight;
@@ -20,7 +22,20 @@ protected:
 
 
 class Weapon : public Item {
-private:
+public:
+    Weapon() {};
+    Weapon(int id_, int cost_, int weight_,
+        float damage_, string rare_, string name_,
+        string description_) {
+        id = id_;
+        cost = cost_;
+        weight = weight_;
+        damage = damage_;
+        rare = rare_;
+        name = name_;
+        description = description_;
+    };
+
     float damage;
     int cost;
     string description;
@@ -28,7 +43,7 @@ private:
 
 
 class Armor : public Item {
-private:
+public:
     int cost;
     float protection,
         regeneration,
@@ -46,9 +61,9 @@ public:
     int max_weight = 50;
 
 private:
-    vector <Weapon> weapones();
-    vector <Item> items();
-    vector <Armor> armors();
+    vector <Weapon> weapones;
+    vector <Item> items;
+    vector <Armor> armors;
 };
 
 
