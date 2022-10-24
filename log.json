@@ -14,11 +14,11 @@
 		},
 		"hp" : 100,
 		"money" : 12,
-		"skill_points" : 2,
+		"skill_points" : 1,
 		"skills" : 
 		[
 			2,
-			0,
+			1,
 			0,
 			1,
 			0

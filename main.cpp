@@ -26,6 +26,8 @@ void game_start() {
     bool game_procces = true;
 
     while (game_procces) {
+        cls();
+        txt_message("txt/help.txt");
         int input = _getch();
 
         switch (input) {
@@ -36,7 +38,7 @@ void game_start() {
             upgrade_skills(player);
             break;
         case 109: // M
-            //map_menu(player);
+            map_menu(player);
             break;
         case 115: // S
             save(player);

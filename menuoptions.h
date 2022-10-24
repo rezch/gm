@@ -25,6 +25,45 @@ void cls() {
 	system("cls");
 }
 
+
+void txt_message(string filename) {
+	ifstream file(filename, ios::in);
+	while (true) {
+		string line;
+		getline(file, line);
+		if (file.eof()) {
+			break;
+		}
+		cout << line << endl;
+	}
+	file.close();
+}
+
+
+void map_menu(Player& player) {
+	if (player.in_battle) {
+		return;
+	}
+	bool menu_is_on = true;
+	while (menu_is_on) {
+		cls();
+		txt_message("txt/map.txt");
+
+		int input = _getch();
+		switch (input) {
+		case 4: // 1
+			cout << 1 << endl;
+			break;
+		case 113: // Q
+			save(player);
+			menu_is_on = false;
+			break;
+		}
+		cls();
+	}
+}
+
+
 void inventory_menu(Player& player) {
 	if (player.in_battle) {
 		return;
@@ -51,11 +90,30 @@ void inventory_menu(Player& player) {
 }
 
 
+void txt_message_skills(string filename, int (&skills)[SKILLS_COUNT]) {
+	ifstream file(filename, ios::in);
+	int i = 0;
+	while (true) {
+		string line;
+		getline(file, line);
+		if (file.eof()) {
+			break;
+		}
+		cout << line << skills[i] << endl;
+		i++;
+	}
+	file.close();
+}
+
+
 int skill_points_menu(int(&skills)[5], int points) {
 	bool menu_is_on = true;
 	while (points > 0 && menu_is_on) {
-		cout << "Вам доступно " << points << " очков умений\nЧтобы распределить их нажмите:\n" <<
-			"сила - 1\nловкость - 2\nинтелект - 3\nвзлом - 4\nвосстановление - 5\nвыйти - q\n";
+		cls();
+		cout << "Вам доступно " << points << " очков умений\n";
+		cout << "Чтобы распределить их нажмите:\n";
+		txt_message_skills("txt/skill_menu.txt", skills);
+
 		int choose = _getch();
 		switch (choose) {
 		case 49: // 1
