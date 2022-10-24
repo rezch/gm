@@ -4,7 +4,7 @@
 #include <map>
 #include <iostream>
 #include <vector>
-#include "items.h"
+#include "items_list.h"
 using namespace std;
 
 const int SKILLS_COUNT = 5;
@@ -23,6 +23,12 @@ public:
     Player(int full_hp, int points) {
         hp = full_hp;
         skill_points = points;
+
+        set_weapon(0);
+        set_helmet(1);
+        set_chestplate(2);
+        set_leggings(3);
+        set_boots(4);
 
         for (int i = 0; i < SKILLS_COUNT; i++) {
             skills[skill_names[i]] = 0;
@@ -99,7 +105,7 @@ public:
     }
 
     void set_skillpoints(int points) {
-        if (points > 0) {
+        if (points >= 0) {
             skill_points = points;
         }
     }
@@ -113,32 +119,40 @@ public:
         return weapon;
     }
 
-    void set_weapon(int weapone_id) {
-
+    void set_weapon(int weapon_id) {
+        weapon = weapons_list[weapon_id];
     }
 
-    vector <Armor> get_armor() {
-        return vector <Armor> {helmet, 
-            chestplate, 
-            leggings, 
-            boots
-        };
+    Helmet get_helmet() {
+        return helmet;
     }
 
     void set_helmet(int helmet_id) {
-
+        helmet = helmets_list[helmet_id];
+    }
+    
+    Chestplate get_chestplate() {
+        return chestplate;
     }
 
     void set_chestplate(int chestplate_id) {
+        chestplate = chestplate_list[chestplate_id];
+    }
 
+    Leggings get_leggings() {
+        return leggings;
     }
 
     void set_leggings(int leggings_id) {
-
+        leggings = leggings_list[leggings_id];
     }
 
-    void set_boots(int weapon_id) {
+    Boots get_boots() {
+        return boots;
+    }
 
+    void set_boots(int boots_id) {
+        boots = boots_list[boots_id];
     }
 
 private:
@@ -150,10 +164,10 @@ private:
 
     // Items
     Weapon weapon;
-    Armor helmet,
-        chestplate,
-        leggings,
-        boots;
+    Helmet helmet;
+    Chestplate chestplate;
+    Leggings leggings;
+    Boots boots;
     
     // Skills
     map <string, int> skills;

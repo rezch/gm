@@ -3,24 +3,21 @@
 	{
 		"Items" : 
 		{
-			"Armor" : 
-			{
-				"boots_id" : 0,
-				"chest_id" : 0,
-				"head_id" : 0,
-				"legs_id" : 0
-			},
+			"boots_id" : 4,
+			"chest_id" : 2,
+			"helmet_id" : 1,
+			"legs_id" : 3,
 			"weapone_id" : 0
 		},
 		"hp" : 100,
-		"money" : 12,
-		"skill_points" : 1,
+		"money" : 0,
+		"skill_points" : 4,
 		"skills" : 
 		[
-			2,
 			1,
 			0,
-			1,
+			0,
+			0,
 			0
 		],
 		"xp" : 0

@@ -8,7 +8,7 @@
 using namespace std;
 
 const string armor_names[4] = {
-	"head_id",
+	"helmet_id",
 	"chest_id",
 	"legs_id",
 	"boots_id"
@@ -39,6 +39,12 @@ Player load() {
 	player.add_xp(root["Player"]["xp"].asInt());
 	player.add_money(root["Player"]["money"].asInt());
 
+	player.set_weapon(root["Player"]["Items"]["weapone_id"].asInt());
+	player.set_helmet(root["Player"]["Items"]["helmet_id"].asInt());
+	player.set_chestplate(root["Player"]["Items"]["chest_id"].asInt());
+	player.set_leggings(root["Player"]["Items"]["legs_id"].asInt());
+	player.set_boots(root["Player"]["Items"]["boots_id"].asInt());
+
 	return player;
 }
 
@@ -65,12 +71,11 @@ bool save(Player& player) {
 	root["Player"]["skill_points"] = player.get_skillpoints();
 
 	root["Player"]["Items"]["weapone_id"] = player.get_weapon().id;
-	root["Player"]["Items"]["Armor"]["head_id"];
-	int i = 0;
-	for (auto& armor : player.get_armor()) {
-		root["Player"]["Items"]["Armor"][armor_names[i]] = armor.id;
-		i++;
-	}
+	root["Player"]["Items"]["helmet_id"] = player.get_helmet().id;
+	root["Player"]["Items"]["chest_id"] = player.get_chestplate().id;
+	root["Player"]["Items"]["legs_id"] = player.get_leggings().id;
+	root["Player"]["Items"]["boots_id"] = player.get_boots().id;
+	
 
 	// writing to file
 	ifstream fin("log.json", ios::in);

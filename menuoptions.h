@@ -52,7 +52,10 @@ void map_menu(Player& player) {
 		int input = _getch();
 		switch (input) {
 		case 4: // 1
-			cout << 1 << endl;
+			break;
+		case 5: // 2
+			break;
+		case 6: // 3
 			break;
 		case 113: // Q
 			save(player);
@@ -75,9 +78,24 @@ void inventory_menu(Player& player) {
 			player.get_money() << endl;
 
 		Weapon weapon = player.get_weapon();
+		Helmet helmet = player.get_helmet();
+		Chestplate chestplate = player.get_chestplate();
+		Leggings leggings = player.get_leggings();
+		Boots boots = player.get_boots();
+
 		cout << "Оружие: \n";
-		cout << weapon.name << endl << weapon.rare << endl << weapon.description;
-		weapon.cost;
+		cout << "----------------------\n";
+		cout << weapon.name << endl << weapon.rare << "\n\n" << weapon.description << endl;
+		cout << "----------------------\n";
+		cout << helmet.name << endl << helmet.rare << "\n\n" << helmet.description << endl;
+		cout << "----------------------\n";
+		cout << chestplate.name << endl << chestplate.rare << endl << chestplate.description << endl;
+		cout << "----------------------\n";
+		cout << leggings.name << endl << leggings.rare << "\n\n" << leggings.description << endl;
+		cout << "----------------------\n";
+		cout << boots.name << endl << boots.rare << "\n\n" << boots.description << endl;
+		cout << "----------------------\n";
+
 		int input = _getch();
 		switch (input) {
 		case 113: // Q
@@ -108,11 +126,16 @@ void txt_message_skills(string filename, int (&skills)[SKILLS_COUNT]) {
 
 int skill_points_menu(int(&skills)[5], int points) {
 	bool menu_is_on = true;
-	while (points > 0 && menu_is_on) {
+	while (menu_is_on) {
 		cls();
-		cout << "Вам доступно " << points << " очков умений\n";
-		cout << "Чтобы распределить их нажмите:\n";
-		txt_message_skills("txt/skill_menu.txt", skills);
+		if (points > 0) {
+			cout << "Вам доступно " << points << " очков умений\n";
+			cout << "Чтобы распределить их нажмите:\n";
+			txt_message_skills("txt/skill_menu.txt", skills);
+		}
+		else {
+			cout << "У вас не осталось очков умений\n";
+		}
 
 		int choose = _getch();
 		switch (choose) {

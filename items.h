@@ -14,18 +14,27 @@ public:
 
 class Item : public Object {
 public:
-    string rare;
+    string rare, description;
+    int cost;
 protected:
-    int cost,
-        weight;
+    int weight;
 };
 
 
 class Weapon : public Item {
 public:
-    Weapon() {};
+    Weapon() {
+        id = 0;
+        cost = 0;
+        weight = 0;
+        damage = 0;
+        rare = "default";
+        name = "";
+        description = "";
+    };
     Weapon(int id_, int cost_, int weight_,
-        float damage_, string rare_, string name_,
+        float damage_, 
+        string rare_, string name_,
         string description_) {
         id = id_;
         cost = cost_;
@@ -37,18 +46,60 @@ public:
     };
 
     float damage;
-    int cost;
-    string description;
 };
 
 
 class Armor : public Item {
 public:
-    int cost;
+    Armor() {
+        id = 0;
+        cost = 0;
+        weight = 0;
+        protection = 0;
+        regeneration = 0;
+        damage_boost = 0;
+        rare = "default";
+        name = "";
+        description = "";
+    };
+    Armor(int id_, int cost_, int weight_,
+        float protection_, float regeneration_, float damage_boost_,
+        string rare_, string name_,
+        string description_) {
+        id = id_;
+        cost = cost_;
+        weight = weight_;
+        protection = protection_;
+        regeneration = regeneration_;
+        damage_boost = damage_boost_;
+        rare = rare_;
+        name = name_;
+        description = description_;
+    };
+
     float protection,
         regeneration,
         damage_boost;
+};
 
+
+class Helmet : public Armor {
+    using Armor::Armor;
+};
+
+
+class Chestplate : public Armor {
+    using Armor::Armor;
+};
+
+
+class Leggings : public Armor {
+    using Armor::Armor;
+};
+
+
+class Boots : public Armor {
+    using Armor::Armor;
 };
 
 
