@@ -1,2 +1,8 @@
 ﻿  main.cpp
+C:\Users\Daniil\source\repos\gm\main\creatures.h(93,26): warning C4244: -=: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\menuoptions.h(188,30): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\menuoptions.h(193,30): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\menuoptions.h(198,30): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\menuoptions.h(203,30): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\menuoptions.h(208,30): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
   main.vcxproj -> C:\Users\Daniil\source\repos\gm\x64\Debug\main.exe

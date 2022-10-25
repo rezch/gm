@@ -36,15 +36,26 @@ Player load() {
 		root["Player"]["skill_points"].asInt(),
 		skill_list
 		);
+
+	player.item_updrade_cost = root["Trader"]["cost"].asFloat();
 	player.add_xp(root["Player"]["xp"].asInt());
 	player.add_money(root["Player"]["money"].asInt());
 
-	player.set_weapon(root["Player"]["Items"]["weapone_id"].asInt());
+	// items
+	player.set_weapon(root["Player"]["Items"]["weapon_id"].asInt());
 	player.set_helmet(root["Player"]["Items"]["helmet_id"].asInt());
 	player.set_chestplate(root["Player"]["Items"]["chest_id"].asInt());
 	player.set_leggings(root["Player"]["Items"]["legs_id"].asInt());
 	player.set_boots(root["Player"]["Items"]["boots_id"].asInt());
 
+	// upgrades
+	player.weapon_upg = root["Player"]["Items"]["weapon_upgrade"].asFloat();
+
+	player.helmet_upg = root["Player"]["Items"]["helmet_upgrade"].asFloat();
+	player.chestplate_upg = root["Player"]["Items"]["chestplate_upgrade"].asFloat();
+	player.leggings_upg = root["Player"]["Items"]["leggings_upgrade"].asFloat();
+	player.boots_upg = root["Player"]["Items"]["boots_upgrade"].asFloat();
+	
 	return player;
 }
 
@@ -57,6 +68,7 @@ bool save(Player& player) {
 	// making json root
 	Json::Value root;
 	
+	root["Trader"]["cost"] = player.item_updrade_cost;
 	root["Player"]["hp"] = player.get_hp();
 	root["Player"]["xp"] = player.get_xp();
 	root["Player"]["money"] = player.get_money();
@@ -70,12 +82,20 @@ bool save(Player& player) {
 	root["Player"]["skills"] = skills_json;
 	root["Player"]["skill_points"] = player.get_skillpoints();
 
-	root["Player"]["Items"]["weapone_id"] = player.get_weapon().id;
+	root["Player"]["Items"]["weapon_id"] = player.get_weapon().id;
 	root["Player"]["Items"]["helmet_id"] = player.get_helmet().id;
 	root["Player"]["Items"]["chest_id"] = player.get_chestplate().id;
 	root["Player"]["Items"]["legs_id"] = player.get_leggings().id;
 	root["Player"]["Items"]["boots_id"] = player.get_boots().id;
 	
+	// upgrades
+	root["Player"]["Items"]["weapon_upgrade"] = player.weapon_upg;
+
+	root["Player"]["Items"]["helmet_upgrade"] = player.helmet_upg;
+	root["Player"]["Items"]["chestplate_upgrade"] = player.chestplate_upg;
+	root["Player"]["Items"]["leggings_upgrade"] = player.leggings_upg;
+	root["Player"]["Items"]["boots_upgrade"] = player.boots_upg;
+
 
 	// writing to file
 	ifstream fin("log.json", ios::in);

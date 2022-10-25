@@ -6,12 +6,57 @@
 using namespace std;
 
 
-Weapon Punch = Weapon(
+Weapon NoWeapon = Weapon(
     0, 0, 0, // id cost weight
+    0, // damage
+    "default", // rare
+    "Ничего", // name 
+    ""
+);
+
+
+Helmet NoHelmet = Helmet(
+    0, 0, 0, // id cost weight
+    0, 0, 0, // damage
+    "default", // rare
+    "Ничего", // name 
+    ""
+);
+
+
+Chestplate NoChestplate = Chestplate(
+    0, 0, 0, // id cost weight
+    0, 0, 0, // damage
+    "default", // rare
+    "Ничего", // name 
+    ""
+);
+
+
+Leggings NoLeggings = Leggings(
+    0, 0, 0, // id cost weight
+    0, 0, 0, // damage
+    "default", // rare
+    "Ничего", // name 
+    ""
+);
+
+
+Boots NoBoots = Boots(
+    0, 0, 0, // id cost weight
+    0, 0, 0, // damage
+    "default", // rare
+    "Ничего", // name 
+    ""
+);
+
+
+Weapon Punch = Weapon(
+    1, 0, 0, // id cost weight
     15, // damage
     "default", // rare
     "Кулаки", // name 
-    "обычные кулаки, есть у каждого человека\nБольше силы - больше пользы"
+    "Обычные кулаки, есть у каждого человека\nБольше силы - больше пользы"
 );
 
 
@@ -25,7 +70,7 @@ Helmet Hat = Helmet(
 
 
 Chestplate Jacket = Chestplate(
-    2, 5, 0,  // id cost weight
+    1, 5, 0,  // id cost weight
     5, 0, 0, // protection regeneration damage_boost
     "default", // rare
     "Куртка", // name
@@ -34,7 +79,7 @@ Chestplate Jacket = Chestplate(
 
 
 Leggings Pants = Leggings(
-    3, 4, 0,  // id cost weight
+    1, 4, 0,  // id cost weight
     4, 0, 0, // protection regeneration damage_boost
     "default", // rare
     "Джинсы", // name
@@ -43,7 +88,7 @@ Leggings Pants = Leggings(
 
 
 Boots Shoes = Boots(
-    4, 4, 0,  // id cost weight
+    1, 4, 0,  // id cost weight
     3, 0, 0, // protection regeneration damage_boost
     "default", // rare
     "Ботинки", // name
@@ -53,27 +98,32 @@ Boots Shoes = Boots(
 
 
 map <int, Weapon> weapons_list = {
-    {0, Punch},
+    {0, NoWeapon},
+    {1, Punch},
 };
 
 
 map <int, Helmet> helmets_list = {
+    {0, NoHelmet},
     {1, Hat},
 };
 
 
 map <int, Chestplate> chestplate_list = {
-    {2, Jacket},
+    {0, NoChestplate},
+    {1, Jacket},
 };
 
 
 map <int, Leggings> leggings_list = {
-    {3, Pants},
+    {0, NoLeggings},
+    {1, Pants},
 };
 
 
 map <int, Boots> boots_list = {
-    {4, Shoes},
+    {0, NoBoots},
+    {1, Shoes},
 };
 
 

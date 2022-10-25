@@ -46,6 +46,10 @@ public:
     };
 
     float damage;
+
+    void add_damage(float add) {
+        damage += add;
+    }
 };
 
 
@@ -80,6 +84,18 @@ public:
     float protection,
         regeneration,
         damage_boost;
+
+    void add_protection(float add) {
+        protection += add;
+    }
+
+    void add_regeneration(float add) {
+        regeneration += add;
+    }
+
+    void add_damage_boost(float add) {
+        damage_boost += add;
+    }
 };
 
 
