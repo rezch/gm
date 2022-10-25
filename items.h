@@ -31,7 +31,7 @@ public:
         rare = "default";
         name = "";
         description = "";
-    };
+    }
     Weapon(int id_, int cost_, int weight_,
         float damage_, 
         string rare_, string name_,
@@ -43,7 +43,7 @@ public:
         rare = rare_;
         name = name_;
         description = description_;
-    };
+    }
 
     float damage;
 
@@ -65,7 +65,7 @@ public:
         rare = "default";
         name = "";
         description = "";
-    };
+    }
     Armor(int id_, int cost_, int weight_,
         float protection_, float regeneration_, float damage_boost_,
         string rare_, string name_,
@@ -79,7 +79,7 @@ public:
         rare = rare_;
         name = name_;
         description = description_;
-    };
+    }
 
     float protection,
         regeneration,

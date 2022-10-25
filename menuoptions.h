@@ -6,8 +6,8 @@
 #include <map>
 #include <vector>
 #include <windows.h>
-#include "items.h"
-#include "CREATURES.H"
+#include "consoleapp.h"
+#include "pve.h"
 #include "progress_save.h"
 #include "items_list.h"
 using namespace std;
@@ -23,38 +23,8 @@ map <string, int> rarity = {
 };
 
 
-void cls() {
-	system("cls");
-}
-
-
-void ccout(string text, int color, bool endline) {
-	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleTextAttribute(hConsole, color);
-	cout << text;
-	if (endline) {
-		cout << endl;
-	}
-	SetConsoleTextAttribute(hConsole, 7);
-}
-
-
-void txt_message(string filename) {
-	ifstream file(filename, ios::in);
-	while (true) {
-		string line;
-		getline(file, line);
-		if (file.eof()) {
-			break;
-		}
-		cout << line << endl;
-	}
-	file.close();
-}
-
-
 void player_items_print(Player& player) {
-	ccout("MONEY:", 96, 0);
+	ccout("MONEY:", 6, 0);
 	cout << " " << player.get_money() << "\n\n";
 
 	Weapon weapon = player.get_weapon();
@@ -141,7 +111,7 @@ void player_items_print(Player& player) {
 
 
 void items_upgrade_print(Player& player) {
-	ccout("MONEY:", 96, 0);
+	ccout("MONEY:", 6, 0);
 	cout << " " << player.get_money() << "\n\n";
 	ccout("Стоимость улучшения:", 96, 0);
 	cout << " " << player.item_updrade_cost << "\n\n";
@@ -275,6 +245,34 @@ void sell_menu(Player& player) {
 }
 
 
+void buy_health_potion(Player& player) {
+	if (player.get_money() >= 45) {
+		while (true) {
+			cls();
+			txt_message("txt/potion_menu.txt");
+			cout << "Ваше здоровье: " << player.get_hp() << "\n";
+			int input = _getch();
+			switch (input) {
+			case 49: // 1
+				player.spend_money(45);
+				player.add_hp(15);
+				save(player);
+				return;
+			case 50: // 2
+				return;
+			case 130: // Q
+				return;
+			}
+		}
+	}
+	else {
+		cls();
+		cout << "У вас недостаточно денег\n";
+		_getch();
+	}
+}
+
+
 void trader_menu(Player& player) {
 	bool menu_is_on = true;
 	while (menu_is_on) {
@@ -282,11 +280,14 @@ void trader_menu(Player& player) {
 		txt_message("txt/trader.txt");
 		int input = _getch();
 		switch (input) {
-		case 49:
+		case 49: // 1
 			sell_menu(player);
 			break;
-		case 50:
+		case 50: // 2
 			item_upgrade_menu(player);
+			break;
+		case 51: // 3
+			buy_health_potion(player);
 			break;
 		case 113: // Q
 			save(player);
@@ -313,6 +314,7 @@ void map_menu(Player& player) {
 			trader_menu(player);
 			break;
 		case 50: // 2
+			arena_menu(player);
 			break;
 		case 51: // 3
 			break;
@@ -333,7 +335,9 @@ void inventory_menu(Player& player) {
 	bool menu_is_on = true;
 	while (menu_is_on) {
 		cls();
-		ccout("XP:", 160, 0);
+		ccout("HP:", 4, 0);
+		cout << " " << player.get_hp() << "\n";
+		ccout("XP:", 2, 0);
 		cout << " " << player.get_xp() << "\n";
 		player_items_print(player);
 
@@ -341,27 +345,10 @@ void inventory_menu(Player& player) {
 		switch (input) {
 		case 113: // Q
 			save(player);
-			menu_is_on = false;
-			break;
+			return;
 		}
 		cls();
 	}
-}
-
-
-void txt_message_skills(string filename, int (&skills)[SKILLS_COUNT]) {
-	ifstream file(filename, ios::in);
-	int i = 0;
-	while (true) {
-		string line;
-		getline(file, line);
-		if (file.eof()) {
-			break;
-		}
-		cout << line << skills[i] << endl;
-		i++;
-	}
-	file.close();
 }
 
 

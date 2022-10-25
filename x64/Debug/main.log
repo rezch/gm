@@ -1,8 +1,12 @@
 ﻿  main.cpp
-C:\Users\Daniil\source\repos\gm\main\creatures.h(93,26): warning C4244: -=: преобразование "float" в "int", возможна потеря данных
-C:\Users\Daniil\source\repos\gm\main\menuoptions.h(188,30): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-C:\Users\Daniil\source\repos\gm\main\menuoptions.h(193,30): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-C:\Users\Daniil\source\repos\gm\main\menuoptions.h(198,30): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-C:\Users\Daniil\source\repos\gm\main\menuoptions.h(203,30): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-C:\Users\Daniil\source\repos\gm\main\menuoptions.h(208,30): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\creatures.h(23,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\creatures.h(75,31): warning C4244: return: преобразование "double" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\creatures.h(98,13): warning C4244: -=: преобразование "double" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\creatures.h(107,39): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\creatures.h(295,28): warning C4244: -=: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\menuoptions.h(160,30): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\menuoptions.h(165,30): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\menuoptions.h(170,30): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\menuoptions.h(175,30): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\menuoptions.h(180,30): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
   main.vcxproj -> C:\Users\Daniil\source\repos\gm\x64\Debug\main.exe

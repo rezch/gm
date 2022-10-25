@@ -13,16 +13,26 @@ const float upgrade_k = 2;
 const string skill_names[SKILLS_COUNT] = { "power", // сила
         "agility", // ловкость
         "intelligence", // интелект
-        "hack", // взлом
+        "parrying", // парирование
         "healing" // восстановление
 };
+
+
+
+int random(int from, int to) {
+    srand(time(NULL));
+    if (from > 0) return from + rand() % (to - from);
+    else return from + rand() % (abs(from) + to);
+}
+
 
 
 class Player {
 public:
     Player() {};
-    Player(int full_hp, int points) {
-        hp = full_hp;
+    Player(int full_hp_, int points) {
+        full_hp = full_hp_;
+        hp = full_hp_;
         skill_points = points;
         money = 500;
 
@@ -36,8 +46,8 @@ public:
             skills[skill_names[i]] = 0;
         }
     };
-    Player(int full_hp, int points, int (&skill_list)[5]) {
-        hp = full_hp;
+    Player(int hp_, int points, int(&skill_list)[5]) {
+        hp = hp_;
         skill_points = points;
 
         for (int i = 0; i < SKILLS_COUNT; i++) {
@@ -47,12 +57,55 @@ public:
 
     // public varibales
     bool in_battle = false;
+    int full_hp;
     float item_updrade_cost = 50;
     float weapon_upg = 0,
         helmet_upg = 0,
         chestplate_upg = 0,
         leggings_upg = 0,
         boots_upg = 0;
+
+    // pve
+
+    int attack() {
+        // damage from 80 to 100 %
+        return (weapon.damage + weapon_upg 
+            + (skills["agility"] * 0.25)
+            + skills["power"])
+            * random(80, 100) / 100;
+    }
+
+    void add_hp(int hp_points) {
+        hp += hp_points;
+        hp = min(hp, full_hp);
+    }
+
+    int get_hp() {
+        return hp;
+    }
+
+    bool is_dead() {
+        return hp <= 0;
+    }
+
+    void take_damage(int damage) {
+        damage -= (helmet_upg +
+            chestplate_upg +
+            leggings_upg +
+            boots_upg)
+            * skills["parrying"]
+            * random(80, 100) / 100
+            * 0.6;
+        if (damage > 0) {
+            hp -= damage;
+        }
+        hp = max(0, hp);
+    }
+
+    // after step of fight abilities
+    void after_step() {
+        hp += skills["healing"] * 0.1 * full_hp;
+    };
 
     // xp
     int get_xp() {
@@ -63,6 +116,10 @@ public:
         if (xp_points > 0) {
             xp += xp_points;
         }
+    }
+
+    int get_level() {
+        return xp / 10;
     }
 
     //money
@@ -81,21 +138,6 @@ public:
             money -= sum;
         }
     }
-
-    // hp
-    int get_hp() {
-        return hp;
-    };
-
-    void take_damage(int damage) {
-        damage -= helmet_upg +
-            chestplate_upg +
-            leggings_upg +
-            boots_upg;
-        if (damage > 0) {
-            hp -= damage;
-        }
-    };
 
     // skills constructor
     void skills_to_list(int (&skills_list)[SKILLS_COUNT]) {
@@ -213,8 +255,51 @@ private:
 
 class Enemy {
 public:
+    Enemy() {};
+    Enemy(string name_, string description_,
+        int damage_, float resistance_, int regeneration_,
+        int hp_, int xp_) {
+        name = name_;
+        description = description_;
+        full_hp = hp_;
+        hp = full_hp; 
+        damage = damage_; 
+        regeneration = regeneration_;
+        xp = xp_; 
+        resistance = resistance_;
+    };
+
     string name;
     string description;
+    int full_hp;
+
+    int attack() {
+        // from 80 to 100 % of damage
+        return damage * random(80, 100) / 100;
+    }
+
+    int get_hp() {
+        return hp;
+    }
+
+    int get_xp() {
+        return xp;
+    }
+
+    bool is_dead() {
+        return hp <= 0;
+    }
+
+    void take_damage(int taken_damage) {
+        // from 80 to 100 % of resistance
+        hp -= taken_damage - resistance * random(80, 100) / 100;
+    }
+
+    // after step of fight abilities
+    void after_step() {
+        hp += regeneration;
+    }
+
 private:
     int hp,
         damage,

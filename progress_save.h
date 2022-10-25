@@ -36,7 +36,7 @@ Player load() {
 		root["Player"]["skill_points"].asInt(),
 		skill_list
 		);
-
+	player.full_hp = root["Player"]["full_hp"].asInt();
 	player.item_updrade_cost = root["Trader"]["cost"].asFloat();
 	player.add_xp(root["Player"]["xp"].asInt());
 	player.add_money(root["Player"]["money"].asInt());
@@ -69,6 +69,7 @@ bool save(Player& player) {
 	Json::Value root;
 	
 	root["Trader"]["cost"] = player.item_updrade_cost;
+	root["Player"]["full_hp"] = player.full_hp;
 	root["Player"]["hp"] = player.get_hp();
 	root["Player"]["xp"] = player.get_xp();
 	root["Player"]["money"] = player.get_money();

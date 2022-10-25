@@ -8,14 +8,15 @@
 			"chest_id" : 1,
 			"chestplate_upgrade" : 0.0,
 			"helmet_id" : 1,
-			"helmet_upgrade" : 7.0,
+			"helmet_upgrade" : 0.0,
 			"leggings_upgrade" : 0.0,
 			"legs_id" : 1,
 			"weapon_id" : 1,
-			"weapon_upgrade" : 7.0
+			"weapon_upgrade" : 0.0
 		},
-		"hp" : 100,
-		"money" : 2963,
+		"full_hp" : 100,
+		"hp" : 35,
+		"money" : 185,
 		"skill_points" : 5,
 		"skills" : 
 		[
@@ -25,10 +26,10 @@
 			0,
 			0
 		],
-		"xp" : 0
+		"xp" : 1450
 	},
 	"Trader" : 
 	{
-		"cost" : 569.53125
+		"cost" : 50.0
 	}
 }
