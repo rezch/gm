@@ -55,6 +55,5 @@ void game_start() {
 int main() {
     setlocale(LC_ALL, "Russian");
     game_start();
-
     return 0;
 }

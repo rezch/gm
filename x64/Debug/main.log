@@ -1,12 +1,50 @@
 ﻿  main.cpp
-C:\Users\Daniil\source\repos\gm\main\creatures.h(23,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-C:\Users\Daniil\source\repos\gm\main\creatures.h(75,31): warning C4244: return: преобразование "double" в "int", возможна потеря данных
-C:\Users\Daniil\source\repos\gm\main\creatures.h(98,13): warning C4244: -=: преобразование "double" в "int", возможна потеря данных
-C:\Users\Daniil\source\repos\gm\main\creatures.h(107,39): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
-C:\Users\Daniil\source\repos\gm\main\creatures.h(295,28): warning C4244: -=: преобразование "float" в "int", возможна потеря данных
-C:\Users\Daniil\source\repos\gm\main\menuoptions.h(160,30): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-C:\Users\Daniil\source\repos\gm\main\menuoptions.h(165,30): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-C:\Users\Daniil\source\repos\gm\main\menuoptions.h(170,30): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-C:\Users\Daniil\source\repos\gm\main\menuoptions.h(175,30): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-C:\Users\Daniil\source\repos\gm\main\menuoptions.h(180,30): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\items_list.h(10,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\creatures.h(69,31): warning C4244: return: преобразование "double" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\creatures.h(109,31): warning C4244: return: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\creatures.h(119,13): warning C4244: -=: преобразование "double" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\creatures.h(130,39): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\creatures.h(326,54): warning C4244: -=: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\itemsdrop.h(21,67): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\itemsdrop.h(26,67): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\itemsdrop.h(31,73): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\itemsdrop.h(36,69): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\itemsdrop.h(41,63): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\itemsdrop.h(47,71): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\itemsdrop.h(52,71): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\itemsdrop.h(57,77): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\itemsdrop.h(62,73): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\itemsdrop.h(67,67): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\pve.h(83,42): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\pve.h(83,14): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\pve.h(95,46): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\pve.h(95,14): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\pve.h(99,48): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\pve.h(99,14): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\pve.h(103,48): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\pve.h(103,14): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\pve.h(115,54): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\pve.h(115,18): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\pve.h(119,56): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\pve.h(119,18): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\pve.h(123,56): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\pve.h(123,18): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\pve.h(135,50): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\pve.h(135,16): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\pve.h(139,52): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\pve.h(139,16): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\pve.h(143,52): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\pve.h(143,16): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\pve.h(155,44): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\pve.h(155,13): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\pve.h(159,46): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\pve.h(159,13): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\pve.h(163,46): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\pve.h(163,13): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\menuoptions.h(152,30): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\menuoptions.h(157,30): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\menuoptions.h(162,30): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\menuoptions.h(167,30): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\menuoptions.h(172,30): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\pve.h(204): warning C4715: player_item_cost: значение возвращается не при всех путях выполнения
   main.vcxproj -> C:\Users\Daniil\source\repos\gm\x64\Debug\main.exe

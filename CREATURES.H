@@ -9,22 +9,16 @@ using namespace std;
 
 const int SKILLS_COUNT = 5;
 const float upgrade_k = 2;
+const short int helth_potion_cost = 45;
+const short int trader_save_cost = 50;
+const short int helth_potion_regeneration = 15;
 
 const string skill_names[SKILLS_COUNT] = { "power", // сила
         "agility", // ловкость
-        "intelligence", // интелект
+        "full_hp", // здоровье
         "parrying", // парирование
         "healing" // восстановление
 };
-
-
-
-int random(int from, int to) {
-    srand(time(NULL));
-    if (from > 0) return from + rand() % (to - from);
-    else return from + rand() % (abs(from) + to);
-}
-
 
 
 class Player {
@@ -35,6 +29,7 @@ public:
         hp = full_hp_;
         skill_points = points;
         money = 500;
+        trader_save = false;
 
         set_weapon(1);
         set_helmet(1);
@@ -57,7 +52,7 @@ public:
 
     // public varibales
     bool in_battle = false;
-    int full_hp;
+    bool trader_save;
     float item_updrade_cost = 50;
     float weapon_upg = 0,
         helmet_upg = 0,
@@ -66,7 +61,6 @@ public:
         boots_upg = 0;
 
     // pve
-
     int attack() {
         // damage from 80 to 100 %
         return (weapon.damage + weapon_upg 
@@ -77,15 +71,42 @@ public:
 
     void add_hp(int hp_points) {
         hp += hp_points;
-        hp = min(hp, full_hp);
+        if (hp > full_hp) {
+            hp = full_hp;
+        }
     }
 
     int get_hp() {
         return hp;
     }
 
+    void set_full_hp(int points) {
+        full_hp = points;
+    }
+
+    int get_full_hp() {
+        return full_hp + 10 * skills["full_hp"];
+    }
+
+    int get_full_hp_save_value() {
+        return full_hp;
+    }
+
     bool is_dead() {
         return hp <= 0;
+    }
+
+    int parrying(int damage) {
+        after_step();
+        damage /= (skills["parrying"] + 10) + damage * random(25, 50) / 100;
+        if (damage > 0) {
+            hp -= damage;
+        }
+        return (helmet_upg +
+            chestplate_upg +
+            leggings_upg +
+            boots_upg)
+            * random(80, 100) / 100;
     }
 
     void take_damage(int damage) {
@@ -104,7 +125,12 @@ public:
 
     // after step of fight abilities
     void after_step() {
+        if (hp < 1) return;
+
         hp += skills["healing"] * 0.1 * full_hp;
+        if (hp > full_hp) {
+            hp = full_hp;
+        }
     };
 
     // xp
@@ -152,6 +178,10 @@ public:
         for (int i = 0; i < SKILLS_COUNT; i++) {
             skills[skill_names[i]] = skills_list[i];
         }
+    }
+
+    void add_skillpoints(int points) {
+        skill_points += points;
     }
 
     int get_skillpoints() {
@@ -236,7 +266,8 @@ public:
 
 private:
     // specifications
-    int hp,
+    int full_hp,
+        hp,
         skill_points,
         xp,
         money;
@@ -292,12 +323,21 @@ public:
 
     void take_damage(int taken_damage) {
         // from 80 to 100 % of resistance
-        hp -= taken_damage - resistance * random(80, 100) / 100;
+        taken_damage -= resistance * random(30, 100) / 100;
+        if (taken_damage > 0) {
+            hp -= taken_damage;
+        }
+        hp = max(0, hp);
     }
 
     // after step of fight abilities
     void after_step() {
+        if (hp < 1) return;
+
         hp += regeneration;
+        if (hp > full_hp) {
+            hp = full_hp;
+        }
     }
 
 private:

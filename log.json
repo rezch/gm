@@ -5,31 +5,32 @@
 		{
 			"boots_id" : 1,
 			"boots_upgrade" : 0.0,
-			"chest_id" : 1,
-			"chestplate_upgrade" : 0.0,
+			"chest_id" : 4,
+			"chestplate_upgrade" : 3.0,
 			"helmet_id" : 1,
-			"helmet_upgrade" : 0.0,
+			"helmet_upgrade" : 3.0,
 			"leggings_upgrade" : 0.0,
-			"legs_id" : 1,
-			"weapon_id" : 1,
-			"weapon_upgrade" : 0.0
+			"legs_id" : 5,
+			"weapon_id" : 2,
+			"weapon_upgrade" : 7.0
 		},
-		"full_hp" : 100,
-		"hp" : 35,
-		"money" : 185,
-		"skill_points" : 5,
+		"full_hp" : 470,
+		"hp" : 6,
+		"money" : 44,
+		"skill_points" : 1,
 		"skills" : 
 		[
+			8,
 			0,
+			7,
 			0,
-			0,
-			0,
-			0
+			7
 		],
-		"xp" : 1450
+		"xp" : 1930
 	},
 	"Trader" : 
 	{
-		"cost" : 50.0
+		"cost" : 238.4185791015625,
+		"item_save" : false
 	}
 }
