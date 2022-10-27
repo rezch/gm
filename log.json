@@ -15,8 +15,8 @@
 			"weapon_upgrade" : 1.0
 		},
 		"full_hp" : 250,
-		"hp" : 187,
-		"money" : 1170,
+		"hp" : 88,
+		"money" : 1200,
 		"skill_points" : 8,
 		"skills" : 
 		[
@@ -26,7 +26,7 @@
 			0,
 			0
 		],
-		"xp" : 390
+		"xp" : 715
 	},
 	"Trader" : 
 	{

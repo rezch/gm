@@ -108,19 +108,19 @@ void dropped_item_print(Player& player, int type, int item_id) {
 		ccout(chestplate.name, rarity[chestplate.rare], 1);
 		ccout("Стоимость:", cost_color, 0);
 		cout << " " << chestplate.cost << " ";
-		dout(chestplate.cost, player.get_helmet().cost);
+		dout(chestplate.cost, player.get_chestplate().cost);
 
 		ccout("             Защита:", armor_properties, 0);
 		cout << " " << chestplate.protection << " ";
-		dout(chestplate.protection, player.get_helmet().protection);
+		dout(chestplate.protection, player.get_chestplate().protection);
 
 		ccout("        Регенерация:", armor_properties, 0);
 		cout << " " << chestplate.regeneration << " ";
-		dout(chestplate.regeneration, player.get_helmet().regeneration);
+		dout(chestplate.regeneration, player.get_chestplate().regeneration);
 
 		ccout("Дополнительный урон:", armor_properties, 0);
 		cout << " " << chestplate.damage_boost << " ";
-		dout(chestplate.damage_boost, player.get_helmet().damage_boost);
+		dout(chestplate.damage_boost, player.get_chestplate().damage_boost);
 		cout << chestplate.description << "\n";
 		break;
 	case 3: // Leggings
@@ -128,19 +128,19 @@ void dropped_item_print(Player& player, int type, int item_id) {
 		ccout(leggings.name, rarity[leggings.rare], 1);
 		ccout("Стоимость:", cost_color, 0);
 		cout << " " << leggings.cost << " ";
-		dout(leggings.cost, player.get_helmet().cost);
+		dout(leggings.cost, player.get_leggings().cost);
 
 		ccout("             Защита:", armor_properties, 0);
 		cout << " " << leggings.protection << " ";
-		dout(leggings.protection, player.get_helmet().protection);
+		dout(leggings.protection, player.get_leggings().protection);
 
 		ccout("        Регенерация:", armor_properties, 0);
 		cout << " " << leggings.regeneration << " ";
-		dout(leggings.regeneration, player.get_helmet().regeneration);
+		dout(leggings.regeneration, player.get_leggings().regeneration);
 
 		ccout("Дополнительный урон:", armor_properties, 0);
 		cout << " " << leggings.damage_boost << " ";
-		dout(leggings.damage_boost, player.get_helmet().damage_boost);
+		dout(leggings.damage_boost, player.get_leggings().damage_boost);
 		cout << leggings.description << "\n";
 		break;
 	case 4: // Boots
@@ -148,19 +148,19 @@ void dropped_item_print(Player& player, int type, int item_id) {
 		ccout(boots.name, rarity[boots.rare], 1);
 		ccout("Стоимость:", cost_color, 0);
 		cout << " " << boots.cost << " ";
-		dout(boots.cost, player.get_helmet().cost);
+		dout(boots.cost, player.get_boots().cost);
 
 		ccout("             Защита:", armor_properties, 0);
 		cout << " " << boots.protection << " ";
-		dout(boots.protection, player.get_helmet().protection);
+		dout(boots.protection, player.get_boots().protection);
 
 		ccout("        Регенерация:", armor_properties, 0);
 		cout << " " << boots.regeneration << " ";
-		dout(boots.regeneration, player.get_helmet().regeneration);
+		dout(boots.regeneration, player.get_boots().regeneration);
 
 		ccout("Дополнительный урон:", armor_properties, 0);
 		cout << " " << boots.damage_boost << " ";
-		dout(boots.damage_boost, player.get_helmet().damage_boost);
+		dout(boots.damage_boost, player.get_boots().damage_boost);
 		cout << boots.description << "\n";
 		break;
 	}
@@ -223,6 +223,7 @@ void dropped_item_choose(Player& player, int type, int item_id) {
 		case 49: // 1
 			if (player.trader_save) {
 				player.add_money(player_item_cost(player, type));
+				player.trader_save = false;
 			}
 			player_set_item(player, type, item_id);
 			save(player);
