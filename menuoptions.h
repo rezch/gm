@@ -37,7 +37,7 @@ void player_items_print(Player& player) {
 
 	ccout("\nБроня: ", armor_color, 1);
 	// Helmet
-	cout << "[2] ";
+	cout << "\n[2] ";
 	ccout(helmet.name, rarity[helmet.rare], 1);
 	ccout("Стоимость:", cost_color, 0);
 	cout << " " << helmet.cost << "\n";
@@ -53,7 +53,7 @@ void player_items_print(Player& player) {
 	cout << helmet.description << "\n";
 
 	// Chestplate
-	cout << "[3] ";
+	cout << "\n[3] ";
 	ccout(chestplate.name, rarity[chestplate.rare], 1);
 	ccout("Стоимость:", cost_color, 0);
 	cout << " " << chestplate.cost << "\n";
@@ -69,7 +69,7 @@ void player_items_print(Player& player) {
 	cout << chestplate.description << "\n";
 
 	// Leggings
-	cout << "[4] ";
+	cout << "\n[4] ";
 	ccout(leggings.name, rarity[leggings.rare], 1);
 	ccout("Стоимость:", cost_color, 0);
 	cout << " " << leggings.cost << "\n";
@@ -85,7 +85,7 @@ void player_items_print(Player& player) {
 	cout << leggings.description << "\n";
 
 	// Boots
-	cout << "[5] ";
+	cout << "\n[5] ";
 	ccout(boots.name, rarity[boots.rare], 1);
 	ccout("Стоимость:", cost_color, 0);
 	cout << " " << boots.cost << "\n";
@@ -244,7 +244,8 @@ void buy_health_potion(Player& player) {
 			txt_message("txt/potion_menu.txt");
 
 			ccout("Ваше здоровье: ", hp_color, 0);
-			cout << player.get_hp() << "\n";
+			cout << player.get_hp() << " / ";
+			cout << player.get_full_hp() << "\n";
 			ccout("Ваши монеты: ", cost_color, 0);
 			cout << player.get_money() << "\n";
 
@@ -257,7 +258,7 @@ void buy_health_potion(Player& player) {
 				break;
 			case 50: // 2
 				return;
-			case 130: // Q
+			case 113: // Q
 				return;
 			}
 		}
@@ -295,7 +296,7 @@ void buy_trader_save(Player& player) {
 				return;
 			case 50: // 2
 				return;
-			case 130: // Q
+			case 113: // Q
 				return;
 			}
 		}

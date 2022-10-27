@@ -263,8 +263,11 @@ void fight(Player& player, Enemy& enemy, bool is_boss) {
 			info_print(player, enemy);
 			break;
 		case 2:
-			break;
-		case 3:
+			player_attack = player.parrying(enemy_attack);
+			enemy.take_damage(player_attack);
+			cout << "Вы нанесли " << player_attack << " урона\n\n";
+			cout << "Получен урон " << enemy_attack << "\n";
+			info_print(player, enemy);
 			break;
 		}
 	}

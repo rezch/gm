@@ -1,9 +1,10 @@
 ﻿  main.cpp
 C:\Users\Daniil\source\repos\gm\main\items_list.h(10,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
 C:\Users\Daniil\source\repos\gm\main\creatures.h(69,31): warning C4244: return: преобразование "double" в "int", возможна потеря данных
-C:\Users\Daniil\source\repos\gm\main\creatures.h(102,13): warning C4244: -=: преобразование "double" в "int", возможна потеря данных
-C:\Users\Daniil\source\repos\gm\main\creatures.h(111,39): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
-C:\Users\Daniil\source\repos\gm\main\creatures.h(304,54): warning C4244: -=: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\creatures.h(109,31): warning C4244: return: преобразование "float" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\creatures.h(119,13): warning C4244: -=: преобразование "double" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\creatures.h(130,39): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+C:\Users\Daniil\source\repos\gm\main\creatures.h(326,54): warning C4244: -=: преобразование "float" в "int", возможна потеря данных
 C:\Users\Daniil\source\repos\gm\main\itemsdrop.h(21,67): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
 C:\Users\Daniil\source\repos\gm\main\itemsdrop.h(26,67): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
 C:\Users\Daniil\source\repos\gm\main\itemsdrop.h(31,73): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных

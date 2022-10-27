@@ -87,4 +87,3 @@ void txt_message_skills(string filename, int(&skills)[SKILLS_COUNT]) {
 
 
 #endif
-

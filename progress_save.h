@@ -77,7 +77,7 @@ bool save(Player& player) {
 	root["Trader"]["item_save"] = player.trader_save;
 	
 	// Player vars
-	root["Player"]["full_hp"] = player.get_full_hp();
+	root["Player"]["full_hp"] = player.get_full_hp_save_value();
 	root["Player"]["hp"] = player.get_hp();
 	root["Player"]["xp"] = player.get_xp();
 	root["Player"]["money"] = player.get_money();
@@ -118,4 +118,3 @@ bool save(Player& player) {
 }
 
 #endif
-

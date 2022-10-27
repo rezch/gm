@@ -88,8 +88,25 @@ public:
         return full_hp + 10 * skills["full_hp"];
     }
 
+    int get_full_hp_save_value() {
+        return full_hp;
+    }
+
     bool is_dead() {
         return hp <= 0;
+    }
+
+    int parrying(int damage) {
+        after_step();
+        damage /= (skills["parrying"] + 10) + damage * random(25, 50) / 100;
+        if (damage > 0) {
+            hp -= damage;
+        }
+        return (helmet_upg +
+            chestplate_upg +
+            leggings_upg +
+            boots_upg)
+            * random(80, 100) / 100;
     }
 
     void take_damage(int damage) {
@@ -108,7 +125,12 @@ public:
 
     // after step of fight abilities
     void after_step() {
+        if (hp < 1) return;
+
         hp += skills["healing"] * 0.1 * full_hp;
+        if (hp > full_hp) {
+            hp = full_hp;
+        }
     };
 
     // xp
@@ -301,7 +323,7 @@ public:
 
     void take_damage(int taken_damage) {
         // from 80 to 100 % of resistance
-        taken_damage -= resistance * random(80, 100) / 100;
+        taken_damage -= resistance * random(30, 100) / 100;
         if (taken_damage > 0) {
             hp -= taken_damage;
         }
@@ -310,6 +332,8 @@ public:
 
     // after step of fight abilities
     void after_step() {
+        if (hp < 1) return;
+
         hp += regeneration;
         if (hp > full_hp) {
             hp = full_hp;
