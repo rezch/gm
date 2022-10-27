@@ -55,6 +55,30 @@ void game_start() {
 int main() {
     setlocale(LC_ALL, "Russian");
     game_start();
-
+    //Player player = load();
+    //dropped_item_choose(player, 0, 2);
+    /*int input;
+    while (true) {
+        pair <int, int> p = get_random_item_id();
+        switch (p.first) {
+        case 0:
+            cout << weapons_list[p.second].name << endl;
+            break;
+        case 1:
+            cout << helmets_list[p.second].name << endl;
+            break;
+        case 2:
+            cout << chestplate_list[p.second].name << endl;
+            break;
+        case 3:
+            cout << leggings_list[p.second].name << endl;
+            break;
+        case 4:
+            cout << boots_list[p.second].name << endl;
+            break;
+        }
+        input = _getch();
+    }
+    */
     return 0;
 }

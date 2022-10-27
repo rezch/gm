@@ -8,6 +8,15 @@ using namespace std;
 
 
 const short int enemy_count = 2;
+const short int boss_count = 1;
+
+
+Enemy KingLichBoss = Enemy(
+	"Король Лич", // name
+	"Дойдя до верхушки цитадели ледяной короны, перед вами предстал повелитель Плети", // description
+	50, 35, 15, // damage resistance regeneration
+	500, 1000 // hp xp
+);
 
 
 Enemy Slime = Enemy(
@@ -29,6 +38,11 @@ Enemy Skeleton = Enemy(
 Enemy enemylist[enemy_count] = {
 	Slime,
 	Skeleton
+};
+
+
+Enemy bosslist[boss_count] = {
+	KingLichBoss
 };
 
 

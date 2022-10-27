@@ -31,15 +31,19 @@ Player load() {
 		skill_list[i] = root["Player"]["skills"][i].asInt();
 	}
 
+	// Player vars
 	Player player = Player(
 		root["Player"]["hp"].asInt(),
 		root["Player"]["skill_points"].asInt(),
 		skill_list
 		);
-	player.full_hp = root["Player"]["full_hp"].asInt();
-	player.item_updrade_cost = root["Trader"]["cost"].asFloat();
+	player.set_full_hp(root["Player"]["full_hp"].asInt());
 	player.add_xp(root["Player"]["xp"].asInt());
 	player.add_money(root["Player"]["money"].asInt());
+
+	// trader
+	player.item_updrade_cost = root["Trader"]["cost"].asFloat();
+	player.trader_save = root["Trader"]["item_save"].asBool();
 
 	// items
 	player.set_weapon(root["Player"]["Items"]["weapon_id"].asInt());
@@ -68,8 +72,12 @@ bool save(Player& player) {
 	// making json root
 	Json::Value root;
 	
+	// trader
 	root["Trader"]["cost"] = player.item_updrade_cost;
-	root["Player"]["full_hp"] = player.full_hp;
+	root["Trader"]["item_save"] = player.trader_save;
+	
+	// Player vars
+	root["Player"]["full_hp"] = player.get_full_hp();
 	root["Player"]["hp"] = player.get_hp();
 	root["Player"]["xp"] = player.get_xp();
 	root["Player"]["money"] = player.get_money();
