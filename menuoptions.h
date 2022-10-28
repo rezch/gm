@@ -238,32 +238,30 @@ void sell_menu(Player& player) {
 
 
 void buy_health_potion(Player& player) {
-	if (player.get_money() >= helth_potion_cost) {
-		while (true) {
-			cls();
-			txt_message("txt/potion_menu.txt");
+	while (player.get_money() >= helth_potion_cost) {
+		cls();
+		txt_message("txt/potion_menu.txt");
 
-			ccout("Ваше здоровье: ", hp_color, 0);
-			cout << player.get_hp() << " / ";
-			cout << player.get_full_hp() << "\n";
-			ccout("Ваши монеты: ", cost_color, 0);
-			cout << player.get_money() << "\n";
+		ccout("Ваше здоровье: ", hp_color, 0);
+		cout << player.get_hp() << " / ";
+		cout << player.get_full_hp() << "\n";
+		ccout("Ваши монеты: ", cost_color, 0);
+		cout << player.get_money() << "\n";
 
-			int input = _getch();
-			switch (input) {
-			case 49: // 1
-				player.spend_money(helth_potion_cost);
-				player.add_hp(helth_potion_regeneration);
-				save(player);
-				break;
-			case 50: // 2
-				return;
-			case 113: // Q
-				return;
-			}
+		int input = _getch();
+		switch (input) {
+		case 49: // 1
+			player.spend_money(helth_potion_cost);
+			player.add_hp(helth_potion_regeneration);
+			save(player);
+			break;
+		case 50: // 2
+			return;
+		case 113: // Q
+			return;
 		}
 	}
-	else {
+	if (player.get_money() < helth_potion_cost) {
 		cls();
 		cout << "У вас недостаточно денег\n";
 		_getch();
@@ -279,29 +277,27 @@ void buy_trader_save(Player& player) {
 		cls();
 		return;
 	}
-	if (player.get_money() >= trader_save_cost) {
-		while (true) {
-			cls();
-			txt_message("txt/buy_trader_save_menu.txt");
+	while (player.get_money() >= trader_save_cost) {
+		cls();
+		txt_message("txt/buy_trader_save_menu.txt");
 
-			ccout("Ваши монеты: ", cost_color, 0);
-			cout << player.get_money() << "\n";
+		ccout("Ваши монеты: ", cost_color, 0);
+		cout << player.get_money() << "\n";
 
-			int input = _getch();
-			switch (input) {
-			case 49: // 1
-				player.spend_money(trader_save_cost);
-				player.trader_save = true;
-				save(player);
-				return;
-			case 50: // 2
-				return;
-			case 113: // Q
-				return;
-			}
+		int input = _getch();
+		switch (input) {
+		case 49: // 1
+			player.spend_money(trader_save_cost);
+			player.trader_save = true;
+			save(player);
+			return;
+		case 50: // 2
+			return;
+		case 113: // Q
+			return;
 		}
 	}
-	else {
+	if (player.get_money() < trader_save_cost) {
 		cls();
 		cout << "У вас недостаточно денег\n";
 		_getch();

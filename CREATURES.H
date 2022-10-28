@@ -71,8 +71,8 @@ public:
 
     void add_hp(int hp_points) {
         hp += hp_points;
-        if (hp > full_hp) {
-            hp = full_hp;
+        if (hp > get_full_hp()) {
+            hp = get_full_hp();
         }
     }
 
@@ -127,9 +127,9 @@ public:
     void after_step() {
         if (hp < 1) return;
 
-        hp += skills["healing"] * 0.1 * full_hp;
-        if (hp > full_hp) {
-            hp = full_hp;
+        hp += skills["healing"] * 0.1 * get_full_hp();
+        if (hp > get_full_hp()) {
+            hp = get_full_hp();
         }
     };
 

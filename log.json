@@ -3,7 +3,7 @@
 	{
 		"Items" : 
 		{
-			"boots_id" : 1,
+			"boots_id" : 6,
 			"boots_upgrade" : 0.0,
 			"chest_id" : 4,
 			"chestplate_upgrade" : 3.0,
@@ -15,9 +15,9 @@
 			"weapon_upgrade" : 7.0
 		},
 		"full_hp" : 470,
-		"hp" : 6,
-		"money" : 44,
-		"skill_points" : 1,
+		"hp" : 120,
+		"money" : 10,
+		"skill_points" : 5,
 		"skills" : 
 		[
 			8,
@@ -26,7 +26,7 @@
 			0,
 			7
 		],
-		"xp" : 1930
+		"xp" : 2935
 	},
 	"Trader" : 
 	{
