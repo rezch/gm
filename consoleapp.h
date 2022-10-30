@@ -22,7 +22,7 @@ const short int weapon_color = cyan;
 const short int armor_color = cyan;
 const short int cost_color = yellow;
 const short int weapon_properties = red;
-const short int armor_properties = purple;
+const short int armor_properties = green;
 
 
 void cls() {
