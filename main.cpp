@@ -10,12 +10,14 @@ using namespace std;
 
 
 Player make_new_player() {
+    Player player;
     if (log_is_empty("log.json")) {
-        Player player = Player(100, 5);
-        upgrade_skills(player);
-        return player;
+        player = Player(100, 5);
+        upgrade_skills_menu(player);
     }
-    Player player = load();
+    else {
+        player = load();
+    }
     return player;
 }
 
@@ -35,7 +37,7 @@ void game_start() {
             inventory_menu(player);
             break;
         case 108: // L
-            upgrade_skills(player);
+            upgrade_skills_menu(player);
             break;
         case 109: // M
             map_menu(player);
@@ -55,5 +57,6 @@ void game_start() {
 int main() {
     setlocale(LC_ALL, "Russian");
     game_start();
+
     return 0;
 }

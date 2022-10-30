@@ -220,7 +220,7 @@ void dropped_item_choose(Player& player, int type, int item_id) {
 
 		int input = _getch();
 		switch (input) {
-		case 49: // 1
+		case 121: // Y
 			if (player.trader_save) {
 				player.add_money(player_item_cost(player, type));
 				player.trader_save = false;
@@ -228,7 +228,7 @@ void dropped_item_choose(Player& player, int type, int item_id) {
 			player_set_item(player, type, item_id);
 			save(player);
 			return;
-		case 50: // 2
+		case 110: // N
 			return;
 		}
 	}
@@ -286,9 +286,14 @@ void fight(Player& player, Enemy& enemy, bool is_boss) {
 			}
 		}
 
-		int points = random(0, 11) / 10;
-		cout << "Вы получили:\n" << enemy.get_xp() << " опыта\n";
-		cout << points << " очков умений\n";
+		int points = random(0, 11) / 10; // 0 - 1
+		int coins = sqrt(random(0, 10000)); // 0 - 100
+
+		cout << "Вы получили:\n" << points << " очков умений\n";
+		cout << enemy.get_xp() << " опыта\n";
+		cout << coins << "  монет\n";
+
+		player.add_money(coins);
 		player.add_skillpoints(points);
 		player.add_xp(enemy.get_xp());
 		player.in_battle = false;

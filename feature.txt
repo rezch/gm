@@ -1,0 +1,10 @@
+TODO:
+
+1 - refactor:
+	trader -> trader class, for diff locations
+	enemies and items lists -> more simply usage
+	
+
+2 - more locations
+3 - different enemies for different locations
+

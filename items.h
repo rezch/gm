@@ -1,5 +1,4 @@
-#ifndef ITEMS_H
-#define ITEMS_H
+#pragma once
 #include <iostream>
 #include <vector>
 #include <string>
@@ -16,8 +15,6 @@ class Item : public Object {
 public:
     string rare, description;
     int cost;
-protected:
-    int weight;
 };
 
 
@@ -26,19 +23,15 @@ public:
     Weapon() {
         id = 0;
         cost = 0;
-        weight = 0;
         damage = 0;
         rare = "default";
         name = "";
         description = "";
     }
-    Weapon(int id_, int cost_, int weight_,
-        float damage_, 
-        string rare_, string name_,
-        string description_) {
+    Weapon(int id_, int cost_, float damage_, 
+        string rare_, string name_, string description_) {
         id = id_;
         cost = cost_;
-        weight = weight_;
         damage = damage_;
         rare = rare_;
         name = name_;
@@ -58,7 +51,6 @@ public:
     Armor() {
         id = 0;
         cost = 0;
-        weight = 0;
         protection = 0;
         regeneration = 0;
         damage_boost = 0;
@@ -66,13 +58,10 @@ public:
         name = "";
         description = "";
     }
-    Armor(int id_, int cost_, int weight_,
-        float protection_, float regeneration_, float damage_boost_,
-        string rare_, string name_,
-        string description_) {
+    Armor(int id_, int cost_, float protection_, float regeneration_, float damage_boost_,
+        string rare_, string name_, string description_) {
         id = id_;
         cost = cost_;
-        weight = weight_;
         protection = protection_;
         regeneration = regeneration_;
         damage_boost = damage_boost_;
@@ -118,20 +107,3 @@ class Boots : public Armor {
     using Armor::Armor;
 };
 
-
-class Backpack : Item {
-public:
-    Backpack() {
-        weight = 0;
-    };
-    int value = 10;
-    int max_weight = 50;
-
-private:
-    vector <Weapon> weapones;
-    vector <Item> items;
-    vector <Armor> armors;
-};
-
-
-#endif

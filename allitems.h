@@ -285,4 +285,45 @@ Boots ElectricBoots = Boots(
 ); //
 
 
+// NoItems
+Weapon NoWeapon = Punch;
+
+
+Helmet NoHelmet = Helmet(
+    0, 0, 0, // id cost weight
+    0, 0, 0, // damage
+    "default", // rare
+    "Ничего", // name 
+    ""
+);
+
+
+Chestplate NoChestplate = Chestplate(
+    0, 0, 0, // id cost weight
+    0, 0, 0, // damage
+    "default", // rare
+    "Ничего", // name 
+    ""
+);
+
+
+Leggings NoLeggings = Leggings(
+    0, 0, 0, // id cost weight
+    0, 0, 0, // damage
+    "default", // rare
+    "Ничего", // name 
+    ""
+);
+
+
+Boots NoBoots = Boots(
+    0, 0, 0, // id cost weight
+    0, 0, 0, // damage
+    "default", // rare
+    "Ничего", // name 
+    ""
+);
+
+
+
 #endif
