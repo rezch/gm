@@ -52,8 +52,7 @@ void item_upgrade_menu(Player& player) {
 			cls();
 		}
 		else {
-			ccout("MONEY:", 96, 0);
-			cout << " " << player.get_money() << "\n\n";
+			player_info_print(player);
 			ccout("Стоимость улучшения:", 96, 0);
 			cout << " " << player.item_updrade_cost << "\n\n";
 			cout << "У вас недостаточно денег" << "\n";
@@ -112,9 +111,7 @@ int trader_buy_menu(Player& player, int cost, void (*action)(Player& player), st
 	while (player.get_money() >= cost) {
 		cls();
 		txt_message(txt_file);
-
-		ccout("Ваши монеты: ", cost_color, 0);
-		cout << player.get_money() << "\n";
+		player_info_print(player);
 
 		int input = _getch();
 		switch (input) {

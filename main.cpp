@@ -2,6 +2,7 @@
 #include <map>
 #include <conio.h>
 #include <locale.h>
+#include <vector>
 #include "creatures.h"
 #include "items.h"
 #include "menuoptions.h"

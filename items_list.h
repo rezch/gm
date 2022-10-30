@@ -22,6 +22,11 @@ map <string, int> rarity = {
 
 
 // All items list (for game load) *******************************************************
+
+
+
+
+
 map <int, Weapon> weapons_list = {
     {0, NoWeapon},
     {1, Punch},

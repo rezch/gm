@@ -48,5 +48,5 @@ C:\Users\User\source\repos\gm\trader.h(33,30): warning C4244: аргумент: 
 C:\Users\User\source\repos\gm\trader.h(38,30): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
 C:\Users\User\source\repos\gm\trader.h(43,30): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
 C:\Users\User\source\repos\gm\pve.h(204): warning C4715: player_item_cost: значение возвращается не при всех путях выполнения
-C:\Users\User\source\repos\gm\trader.h(137): warning C4715: trader_buy_menu: значение возвращается не при всех путях выполнения
+C:\Users\User\source\repos\gm\trader.h(134): warning C4715: trader_buy_menu: значение возвращается не при всех путях выполнения
   main.vcxproj -> C:\Users\User\source\repos\gm\x64\Debug\main.exe
