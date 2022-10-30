@@ -114,7 +114,7 @@ int skill_points_menu(int(&skills)[5], int points) {
 }
 
 
-void upgrade_skills(Player& player) {
+void upgrade_skills_menu(Player& player) {
 	int skills_list[5];
 	player.skills_to_list(skills_list);
 	int free_points = skill_points_menu(skills_list, player.get_skillpoints());
