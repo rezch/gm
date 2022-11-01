@@ -25,8 +25,6 @@ map <string, int> rarity = {
 
 
 
-
-
 map <int, Weapon> weapons_list = {
     {0, NoWeapon},
     {1, Punch},
@@ -78,7 +76,8 @@ map <int, Boots> boots_list = {
     {3, LucifersBerets},
     {4, Slippers},
     {5, TacticBoots},
-    {6, ElectricBoots}
+    {6, ElectricBoots},
+    {7, ReinforcedBoots}
 };
 
 
@@ -124,7 +123,8 @@ map <int, Boots> default_boots_list = {
     {1, Shoes},
     {2, Slippers},
     {3, TacticBoots},
-    {4, ElectricBoots}
+    {4, ElectricBoots},
+    {5, ReinforcedBoots}
 };
 
 

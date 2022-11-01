@@ -1,10 +1,9 @@
 TODO:
 
 1 - refactor:
+	ref to template func, with type check:
+		dropped_item_print
+		player_set_item
+		dropped_item_choose
 	trader -> trader class, for diff locations
-	enemies and items lists -> more simply usage
 	
-
-2 - more locations
-3 - different enemies for different locations
-

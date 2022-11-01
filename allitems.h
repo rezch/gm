@@ -10,13 +10,13 @@ using namespace std;
 // helmets - 7
 // chestplates - 7
 // leggings - 7
-// boots - 7
+// boots - 8
 
 
 // Legendary Items
 Weapon LichsSword = Weapon(
     2, 1250, // id cost
-    340, // damage
+    380, // damage
     "legendary", // rare
     "Ледяная Скорбь", // name 
     "Всякий, кто завладеет этим клинком, получит вечную власть. Подобно тому как лезвие разрушает плоть, сила уродует душу"
@@ -25,7 +25,7 @@ Weapon LichsSword = Weapon(
 
 Weapon WayfinderCrossbow = Weapon(
     3, 1337, // id cost
-    350, // damage
+    320, // damage
     "legendary", // rare
     "Арбалет путеискателя", // name 
     "Его острая стрела способна пронзить что угодно, даже сталь"
@@ -106,7 +106,7 @@ Boots LucifersBerets = Boots(
 
 // Items --------------------------------------------------------------------------------
 Weapon Punch = Weapon(
-    1, 0, // id cost
+    0, 0, // id cost
     15, // damage
     "default", // rare
     "Кулаки", // name 
@@ -282,6 +282,15 @@ Boots ElectricBoots = Boots(
     "epic", // rare
     "Электро ботинки", // name
     "Лучше их не трогать"
+); //
+
+
+Boots ReinforcedBoots = Boots(
+    7, 200, // id cost
+    18, 0, 2, // protection regeneration damage_boost
+    "epic", // rare
+    "Усиленные ботфорты", // name
+    "Крепкая боевая обувь"
 ); //
 
 

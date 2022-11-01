@@ -9,40 +9,8 @@
 #include "consoleapp.h"
 #include "pve.h"
 #include "items_list.h"
-#include "trader.h"
+#include "map.h"
 using namespace std;
-
-
-
-void map_menu(Player& player) {
-	if (player.in_battle) {
-		return;
-	}
-	bool menu_is_on = true;
-	while (menu_is_on) {
-		cls();
-		txt_message("txt/map.txt");
-
-		int input = _getch();
-		Enemy enemy = get_enemy();
-		switch (input) {
-		case 49: // 1
-			trader_menu(player);
-			break;
-		case 50: // 2
-			arena_menu(player);
-			break;
-		case 51: // 3
-			boss(player);
-			break;
-		case 113: // Q
-			save(player);
-			menu_is_on = false;
-			break;
-		}
-		cls();
-	}
-}
 
 
 void inventory_menu(Player& player) {

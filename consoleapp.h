@@ -46,12 +46,13 @@ void dout(int a, int b) {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	if (a < b) {
 		SetConsoleTextAttribute(hConsole, 4);
-		cout << '(' << a - b << ')';
+		cout << '(';
 	}
 	else {
 		SetConsoleTextAttribute(hConsole, 2);
-		cout << "(+" << a - b << ')';
+		cout << "(+";
 	}
+	cout << a - b << ')';
 	SetConsoleTextAttribute(hConsole, 7);
 	cout << "\n";
 }
@@ -99,13 +100,35 @@ void player_info_print(Player& player) {
 }
 
 
-void weapon_print(Weapon& weapon, Player& player) {
+void weapon_print(Weapon& weapon, Player& player, Weapon& second=NoWeapon) {
 	ccout(weapon.name, rarity[weapon.rare], 1);
 	ccout("Стоимость:", cost_color, 0);
-	cout << " " << weapon.cost << "\n";
+	cout << " " << weapon.cost << ' ';
+	if (second.id != 0) dout(weapon.cost, second.cost);
+	cout << "\n";
 	ccout("     Урон:", weapon_properties, 0);
-	cout << " " << weapon.damage + player.weapon_upg << "\n";
+	cout << " " << weapon.damage + player.weapon_upg << ' ';
+	if (second.id != 0) dout(weapon.damage, second.damage);
+	cout << "\n";
 	cout << weapon.description << "\n";
+}
+
+
+int get_upgrades(Armor& armor, Player& player) {
+	const type_info& type = typeid(armor);
+
+	if (type == typeid(Helmet)) {
+		return player.helmet_upg;
+	}
+	if (type == typeid(Chestplate)) {
+		return player.chestplate_upg;
+	}
+	if (type == typeid(Leggings)) {
+		return player.leggings_upg;
+	}
+	if (type == typeid(Boots)) {
+		return player.boots_upg;
+	}
 }
 
 
@@ -113,15 +136,30 @@ void armor_print(Armor& armor, Player& player) {
 	ccout(armor.name, rarity[armor.rare], 1);
 	ccout("Стоимость:", cost_color, 0);
 	cout << " " << armor.cost << "\n";
-
 	ccout("             Защита:", armor_properties, 0);
-	cout << " " << armor.protection + player.helmet_upg << "\n";
-
+	cout << " " << armor.protection + get_upgrades(armor, player) << "\n";
 	ccout("        Регенерация:", armor_properties, 0);
 	cout << " " << armor.regeneration << "\n";
-
 	ccout("Дополнительный урон:", armor_properties, 0);
 	cout << " " << armor.damage_boost << "\n";
+	cout << armor.description << "\n";
+}
+
+
+void armor_compare(Armor& armor, Armor& second=NoBoots) {
+	ccout(armor.name, rarity[armor.rare], 1);
+	ccout("Стоимость:", cost_color, 0);
+	cout << " " << armor.cost << ' ';
+	dout(armor.cost, second.cost);
+	ccout("             Защита:", armor_properties, 0);
+	cout << " " << armor.protection << ' ';
+	dout(armor.protection, second.protection);
+	ccout("        Регенерация:", armor_properties, 0);
+	cout << " " << armor.regeneration << ' ';
+	dout(armor.regeneration, second.regeneration);
+	ccout("Дополнительный урон:", armor_properties, 0);
+	cout << " " << armor.damage_boost << ' ';
+	dout(armor.damage_boost, second.damage_boost);
 	cout << armor.description << "\n";
 }
 

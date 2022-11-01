@@ -7,6 +7,7 @@
 #include "items.h"
 #include "menuoptions.h"
 #include "progress_save.h"
+#include "locations.h"
 using namespace std;
 
 
@@ -26,9 +27,9 @@ Player make_new_player() {
 void game_start() {
     Player player = make_new_player();
     save(player);
-    bool game_procces = true;
+    bool game_process = true;
 
-    while (game_procces) {
+    while (game_process) {
         cls();
         txt_message("txt/help.txt");
         int input = _getch();
@@ -48,16 +49,28 @@ void game_start() {
             break;
         case 113: // Q
             save(player);
-            game_procces = false;
+            game_process = false;
             break;
         }
     }
 }
 
 
+template <typename Type>
+void a(Type& item) {
+    if (is_same<Type, Helmet>::value) {
+        cout << "SAME";
+    }
+}
+
+
 int main() {
     setlocale(LC_ALL, "Russian");
-    game_start();
+    //game_start();
+
+    Helmet item = helmets_list[2];
+    a(item);
+
 
     return 0;
 }
