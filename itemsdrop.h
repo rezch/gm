@@ -16,7 +16,7 @@ map <int, string> totype = {
 };
 
 
-map <int, string> torarity = {
+map <int, string> to_rarity = {
 	{0, "default"},
 	{1, "rare"},
 	{2, "epic"},
@@ -30,59 +30,37 @@ string get_random_rarity() {
 	*  epic      - 9 %
 	*  legendary - 1 %
 	*/
-	int rarity = random(1, 101);
-	if (rarity == 1) return torarity[3];
-	if (rarity < 11) return torarity[2];
-	if (rarity < 36) return torarity[1];
-	return torarity[0];
+	int random_rarity = random(1, 101);
+	if (random_rarity == 1) return to_rarity[3];
+	if (random_rarity < 11) return to_rarity[2];
+	if (random_rarity < 36) return to_rarity[1];
+	return to_rarity[0];
 }
 
 
-void dropped_item_print(Player& player, Item item) {
+template <typename Type>
+void dropped_item_print(Player& player, Type& item) {
 	const type_info& type = typeid(item);
 	cls();
 
 	cout << "Вам выпал предмет:\n" << type.name() << "\n";
-	if (type == typeid(Weapon)) {
+	if (is_same<Type, Weapon>::value) {
 		weapon_print((Weapon&)item, player, (Weapon&)player.get_weapon());
 	}
-	if (type == typeid(Helmet)) {
-		armor_compare((Armor&)item, (Armor&)player.get_helmet());
-	}
-	if (type == typeid(Chestplate)) {
-		armor_compare((Armor&)item, (Armor&)player.get_chestplate());
-	}
-	if (type == typeid(Leggings)) {
-		armor_compare((Armor&)item, (Armor&)player.get_leggings());
-	}
-	if (type == typeid(Weapon)) {
-		armor_compare((Armor&)item, (Armor&)player.get_boots());
+	else {
+		armor_compare((Armor&)item, (Armor&)player.get_item(item));
 	}
 }
 
 
-void player_set_item(Player& player, Item item) {
-	const type_info& type = typeid(item);
-
-	if (type == typeid(Weapon)) {
-		return player.set_weapon(item.id);
-	}
-	if (type == typeid(Helmet)) {
-		return player.set_helmet(item.id);
-	}
-	if (type == typeid(Chestplate)) {
-		return player.set_chestplate(item.id);
-	}
-	if (type == typeid(Leggings)) {
-		return player.set_leggings(item.id);
-	}
-	if (type == typeid(Boots)) {
-		return player.set_boots(item.id);
-	}
+template <typename Type>
+void player_set_item(Player& player, Type& item) {
+	player.set_item(item);
 }
 
 
-void dropped_item_choose(Player& player, Item item) {
+template <typename Type>
+void dropped_item_choose(Player& player, Type& item) {
 	while (true) {
 		dropped_item_print(player, item);
 		txt_message("txt/dropped_item_choose.txt");

@@ -46,11 +46,10 @@ void info_print(Player& player, Enemy& enemy) {
 
 
 void item_drop(Player& player, Location& location, bool is_boss) {
-	if (random(0, 100) < 65) return;
-	Item drop;
-	if (is_boss) drop = location.get_random_legendary_item();
-	else drop = location.get_random_item();
-	dropped_item_choose(player, drop);
+	//if (random(0, 100) < 65) return;
+	
+	auto item = location.get_random_item();
+	dropped_item_choose(player, item);
 }
 
 

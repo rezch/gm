@@ -1,13 +1,8 @@
 ﻿#include <iostream>
-#include <map>
 #include <conio.h>
 #include <locale.h>
-#include <vector>
 #include "creatures.h"
-#include "items.h"
 #include "menuoptions.h"
-#include "progress_save.h"
-#include "locations.h"
 using namespace std;
 
 
@@ -63,14 +58,18 @@ void a(Type& item) {
     }
 }
 
-
+#include "consoleapp.h"
+#include "items.h"
 int main() {
     setlocale(LC_ALL, "Russian");
     //game_start();
 
-    Helmet item = helmets_list[2];
-    a(item);
-
+    Player player = load();
+    Chestplate item = chestplate_list[2];
+    Location forest = Forest();
+    auto item = forest.get_random_item();
+    dropped_item_choose(player, item);
+    //item_drop(player, (Location&)Forest(), 0);
 
     return 0;
 }

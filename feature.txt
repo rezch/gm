@@ -1,9 +1,5 @@
 TODO:
 
 1 - refactor:
-	ref to template func, with type check:
-		dropped_item_print
-		player_set_item
-		dropped_item_choose
 	trader -> trader class, for diff locations
 	

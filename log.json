@@ -5,7 +5,7 @@
 		{
 			"boots_id" : 6,
 			"boots_upgrade" : 0.0,
-			"chest_id" : 4,
+			"chest_id" : 2,
 			"chestplate_upgrade" : 3.0,
 			"helmet_id" : 1,
 			"helmet_upgrade" : 3.0,
@@ -16,7 +16,7 @@
 		},
 		"full_hp" : 470,
 		"hp" : 500,
-		"money" : 27338,
+		"money" : 28438,
 		"skill_points" : 0,
 		"skills" : 
 		[
@@ -31,6 +31,6 @@
 	"Trader" : 
 	{
 		"cost" : 238.4185791015625,
-		"item_save" : true
+		"item_save" : false
 	}
 }

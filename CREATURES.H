@@ -198,7 +198,7 @@ public:
         return skills;
     }
 
-    // Items 
+    // Items
     // Weapon
     void weapon_upgrade() {
         weapon_upg = 1 + weapon_upg * upgrade_k;
@@ -262,6 +262,46 @@ public:
 
     void set_boots(int boots_id) {
         boots = boots_list[boots_id];
+    }
+
+    // set item to appropriate player item
+    template <typename Type>
+    void set_item(Type& item) {
+        if (is_same<Type, Weapon>::value) {
+            weapon = (Weapon&)item;
+        }
+        if (is_same<Type, Helmet>::value) {
+            helmet = (Helmet&)item;
+        }
+        if (is_same<Type, Chestplate>::value) {
+            chestplate = (Chestplate&)item;
+        }
+        if (is_same<Type, Leggings>::value) {
+            leggings = (Leggings&)item;
+        }
+        if (is_same<Type, Boots>::value) {
+            boots = (Boots&)item;
+        }
+    }
+
+    // get item to appropriate player item
+    template <typename Type>
+    Type get_item(Type& type) {
+        if (is_same<Type, Weapon>::value) {
+            return (Type&)get_weapon();
+        }
+        if (is_same<Type, Helmet>::value) {
+            return (Type&)get_helmet();
+        }
+        if (is_same<Type, Chestplate>::value) {
+            return (Type&)get_chestplate();
+        }
+        if (is_same<Type, Leggings>::value) {
+            return (Type&)get_leggings();
+        }
+        if (is_same<Type, Boots>::value) {
+            return (Type&)get_boots();
+        }
     }
 
 private:

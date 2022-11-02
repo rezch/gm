@@ -24,14 +24,14 @@ public:
 		];
 	}
 
-	Item get_random_item() {
+	auto get_random_item() {
 		string rarity = get_random_rarity();
 		return items[rarity][
 			random(0, items[rarity].size())
 		];
 	}
 
-	Item get_random_legendary_item() {
+	auto get_random_legendary_item() {
 		string rarity = "legendary";
 		return items[rarity][
 			random(0, items[rarity].size())

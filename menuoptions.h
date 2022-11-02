@@ -6,6 +6,7 @@
 #include <map>
 #include <vector>
 #include <windows.h>
+#include <cmath>
 #include "consoleapp.h"
 #include "pve.h"
 #include "items_list.h"
