@@ -1,1 +1,2 @@
 C:\Users\User\source\repos\gm\x64\Debug\main.exe
+C:\Users\Daniil\source\repos\gm\main\x64\Debug\main.exe

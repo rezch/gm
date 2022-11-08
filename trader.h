@@ -117,7 +117,6 @@ int trader_buy_menu(Player& player, int cost, void (*action)(Player& player), st
 		switch (input) {
 		case 49: // 1
 			action(player);
-			player.spend_money(cost);
 			save(player);
 			return 1;
 		case 50: // 2
@@ -135,12 +134,16 @@ int trader_buy_menu(Player& player, int cost, void (*action)(Player& player), st
 
 
 void buy_health_potion(Player& player) {
-	player.add_hp(helth_potion_regeneration);
+	if (player.get_hp() < player.get_full_hp()) {
+		player.add_hp(helth_potion_regeneration);
+		player.spend_money(helth_potion_cost);
+	}
 }
 
 
 void buy_trader_save(Player& player) {
 	player.trader_save = true;
+	player.spend_money(trader_save_cost);
 }
 
 

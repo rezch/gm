@@ -18,6 +18,14 @@ public:
 };
 
 
+class PlayerItem : public Item {
+    float damage,
+        protection,
+        regeneration,
+        damage_boost;
+};
+
+
 class Weapon : public Item {
 public:
     Weapon() {

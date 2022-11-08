@@ -46,10 +46,29 @@ void info_print(Player& player, Enemy& enemy) {
 
 
 void item_drop(Player& player, Location& location, bool is_boss) {
-	//if (random(0, 100) < 65) return;
-	
-	auto item = location.get_random_item();
-	dropped_item_choose(player, item);
+	if (random(0, 100) < 65) return;
+
+	pair <int, int> item;
+	item = get_random_item_id();
+	if (is_boss) item = get_random_legendary_item_id();
+	cout << item.first << endl;
+	switch (item.first) {
+	case 0:
+		dropped_item_choose(player, (Weapon&)weapons_list[item.second]);
+		break;
+	case 1:
+		dropped_item_choose(player, (Helmet&)helmets_list[item.second]);
+		break;
+	case 2:
+		dropped_item_choose(player, (Chestplate&)chestplate_list[item.second]);
+		break;
+	case 3:
+		dropped_item_choose(player, (Leggings&)leggings_list[item.second]);
+		break;
+	case 4:
+		dropped_item_choose(player, (Boots&)boots_list[item.second]);
+		break;
+	}
 }
 
 

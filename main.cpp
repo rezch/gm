@@ -62,14 +62,7 @@ void a(Type& item) {
 #include "items.h"
 int main() {
     setlocale(LC_ALL, "Russian");
-    //game_start();
-
-    Player player = load();
-    Chestplate item = chestplate_list[2];
-    Location forest = Forest();
-    auto item = forest.get_random_item();
-    dropped_item_choose(player, item);
-    //item_drop(player, (Location&)Forest(), 0);
+    game_start();
 
     return 0;
 }
