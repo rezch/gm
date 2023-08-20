@@ -53,7 +53,7 @@ public:
     // public varibales
     bool in_battle = false;
     bool trader_save;
-    float item_updrade_cost = 50;
+    int item_updrade_cost = 50;
     float weapon_upg = 0,
         helmet_upg = 0,
         chestplate_upg = 0,

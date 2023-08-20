@@ -8,7 +8,6 @@ using namespace std;
 const float upgrade_cost_k = 1.25;
 
 
-
 void item_upgrade_menu(Player& player) {
 	bool menu_is_on = true;
 	while (menu_is_on) {
@@ -18,30 +17,24 @@ void item_upgrade_menu(Player& player) {
 			items_upgrade_print(player);
 
 			int input = _getch();
-			switch (input) {
-			case 49: // 1
+			if (input >= 1 && input <= 5) {
 				player.spend_money(player.item_updrade_cost);
 				player.item_updrade_cost *= upgrade_cost_k;
+			}
+			switch (input) {
+			case 49: // 1
 				player.weapon_upgrade();
 				break;
 			case 50: // 2
-				player.spend_money(player.item_updrade_cost);
-				player.item_updrade_cost *= upgrade_cost_k;
 				player.helmet_upgrade();
 				break;
 			case 51: // 3
-				player.spend_money(player.item_updrade_cost);
-				player.item_updrade_cost *= upgrade_cost_k;
 				player.chestplate_upgrade();
 				break;
 			case 52: // 4
-				player.spend_money(player.item_updrade_cost);
-				player.item_updrade_cost *= upgrade_cost_k;
 				player.leggings_upgrade();
 				break;
 			case 53: // 5
-				player.spend_money(player.item_updrade_cost);
-				player.item_updrade_cost *= upgrade_cost_k;
 				player.boots_upgrade();
 				break;
 			case 113: // Q
@@ -108,6 +101,10 @@ void sell_menu(Player& player) {
 
 
 int trader_buy_menu(Player& player, int cost, void (*action)(Player& player), string txt_file) {
+	/*
+	* returns 1 if the player successfully buys the item
+	* returns 0 otherwise
+	*/
 	while (player.get_money() >= cost) {
 		cls();
 		txt_message(txt_file);

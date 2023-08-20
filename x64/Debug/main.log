@@ -1,1 +1,37 @@
-﻿  main.vcxproj -> C:\Users\Daniil\source\repos\gm\x64\Debug\main.exe
+﻿  main.cpp
+C:\Users\User\source\repos\gm\items_list.h(10,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\User\source\repos\gm\creatures.h(69,31): warning C4244: return: преобразование "double" в "int", возможна потеря данных
+C:\Users\User\source\repos\gm\creatures.h(109,31): warning C4244: return: преобразование "float" в "int", возможна потеря данных
+C:\Users\User\source\repos\gm\creatures.h(119,13): warning C4244: -=: преобразование "double" в "int", возможна потеря данных
+C:\Users\User\source\repos\gm\creatures.h(130,39): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+C:\Users\User\source\repos\gm\creatures.h(366,54): warning C4244: -=: преобразование "float" в "int", возможна потеря данных
+C:\Users\User\source\repos\gm\consoleapp.h(111,48): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\User\source\repos\gm\consoleapp.h(111,33): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\User\source\repos\gm\consoleapp.h(121,16): warning C4244: return: преобразование "float" в "int", возможна потеря данных
+C:\Users\User\source\repos\gm\consoleapp.h(124,16): warning C4244: return: преобразование "float" в "int", возможна потеря данных
+C:\Users\User\source\repos\gm\consoleapp.h(127,16): warning C4244: return: преобразование "float" в "int", возможна потеря данных
+C:\Users\User\source\repos\gm\consoleapp.h(130,16): warning C4244: return: преобразование "float" в "int", возможна потеря данных
+C:\Users\User\source\repos\gm\consoleapp.h(156,31): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\User\source\repos\gm\consoleapp.h(156,12): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\User\source\repos\gm\consoleapp.h(159,33): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\User\source\repos\gm\consoleapp.h(159,12): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\User\source\repos\gm\consoleapp.h(162,33): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\User\source\repos\gm\consoleapp.h(162,12): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\User\source\repos\gm\progress_save.h(45,59): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+C:\Users\User\source\repos\gm\itemsdrop.h(42,67): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\User\source\repos\gm\itemsdrop.h(47,67): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\User\source\repos\gm\itemsdrop.h(52,73): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\User\source\repos\gm\itemsdrop.h(57,69): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\User\source\repos\gm\itemsdrop.h(62,63): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\User\source\repos\gm\itemsdrop.h(68,71): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\User\source\repos\gm\itemsdrop.h(73,71): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\User\source\repos\gm\itemsdrop.h(78,77): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\User\source\repos\gm\itemsdrop.h(83,73): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\User\source\repos\gm\itemsdrop.h(88,67): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\User\source\repos\gm\locations.h(17,1): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\User\source\repos\gm\locations.h(23,1): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\User\source\repos\gm\pve.h(113,13): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\User\source\repos\gm\trader.h(8,30): warning C4244: *=: преобразование "float" в "int", возможна потеря данных
+C:\Users\User\source\repos\gm\consoleapp.h(132): warning C4715: get_upgrades: значение возвращается не при всех путях выполнения
+C:\Users\User\source\repos\gm\trader.h(133): warning C4715: trader_buy_menu: значение возвращается не при всех путях выполнения
+  main.vcxproj -> C:\Users\User\source\repos\gm\x64\Debug\main.exe
