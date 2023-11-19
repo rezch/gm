@@ -1,0 +1,3 @@
+C:/Users/Daniil/projects/gm_new/cmake-build-debug/CMakeFiles/gm_new.dir
+C:/Users/Daniil/projects/gm_new/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Daniil/projects/gm_new/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,36 @@
+{
+	"Player" : 
+	{
+		"Items" : 
+		{
+			"boots_id" : 1,
+			"boots_upgrade" : 1.0,
+			"chest_id" : 1,
+			"chestplate_upgrade" : 1.0,
+			"helmet_id" : 1,
+			"helmet_upgrade" : 1.0,
+			"leggings_upgrade" : 1.0,
+			"legs_id" : 1,
+			"weapon_id" : 0,
+			"weapon_upgrade" : 1.0
+		},
+		"full_hp" : 100,
+		"hp" : 51,
+		"money" : 585,
+		"skill_points" : 0,
+		"skills" : 
+		[
+			0,
+			1,
+			0,
+			0,
+			4
+		],
+		"xp" : 35
+	},
+	"Trader" : 
+	{
+		"cost" : 50,
+		"item_save" : false
+	}
+}
